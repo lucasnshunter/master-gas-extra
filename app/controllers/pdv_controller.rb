@@ -15,4 +15,13 @@ class PdvController < ApplicationController
     @pdv=Pdv.new
     
   end
+  
+  def define_preco_gas
+  end
+  
+  def define_preco_agua
+  end
+  
+  def relatorios
+  end
 end

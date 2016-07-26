@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   get 'pdv/new'
 
   get 'pdv/show'
+  
+  get 'pdv/define_preco_gas'
+  
+  get 'pdv/define_preco_agua'
+  
+  get 'pdv/relatorios'
 
   get 'pdv/pagina_teste'
 

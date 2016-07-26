@@ -22,10 +22,23 @@ class Pdv
         resp
     end
     
-    def solicitar_relatorio_pdv
-        resp="metodo : solicitar_relatorio_pdv"
+    def define_preco_gas
+        resp="metodo : define_preco_gas"
         resp
     end
     
+    def define_preco_agua
+        resp ="metodo : define_preco_agua"
+        resp
+    end
     
+    def solicitar_relatorio_geral
+        resp="metodo : solicitar_relatorio_geral"
+        resp
+    end
+    
+    def solicitar_relatorio_especifico_pdv
+        resp="metodo : solicitar_relatorio_especifico_pdv"
+        resp
+    end
 end
