@@ -43,9 +43,11 @@
             </li>
              <li><a><i class="fa fa-shopping-cart"></i> PDV's <span class="fa fa-chevron-down"></span></a>
               <ul class="nav child_menu" style="display: none">
-                <li><a href="general_elements.html">listar PDV's</a>
+                <li> 
+                  <%=link_to "Criar PDV'S", pdv_new_path%>
                 </li>
-                <li><a href="media_gallery.html">criar PDV's</a>
+                <li>
+                  <%=link_to "Listar PDV'S", pdv_index_path%>
                 </li>
                 
               </ul>

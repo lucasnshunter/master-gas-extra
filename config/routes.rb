@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'pdv/home'
+
+  get 'pdv/index'
+
+  get 'pdv/new'
+
+  get 'pdv/show'
+
+  get 'pdv/pagina_teste'
+
+  get 'server/pagina_teste'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
