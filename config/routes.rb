@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'pdd/home'
+
+  get 'pdd/new'
+
+  get 'pdd/show'
+
+  get 'pdd/index'
+
+  get 'pdd/relatorios'
+
+  get 'pdd/pagina_teste'
+
   get 'pdv/home'
 
   get 'pdv/index'
