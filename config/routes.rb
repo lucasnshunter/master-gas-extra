@@ -1,9 +1,23 @@
 Rails.application.routes.draw do
+  get 'representante/home'
+
+  get 'representante/pagina_teste'
+
+  get 'representante/new'
+
+  get 'representante/index'
+
+  get 'representante/relatorio'
+  
+  post 'representante/show'
+
   get 'pdd/home'
 
   get 'pdd/new'
 
   get 'pdd/show'
+  
+  post 'pdd/show'
 
   get 'pdd/index'
 
@@ -18,6 +32,8 @@ Rails.application.routes.draw do
   get 'pdv/new'
 
   get 'pdv/show'
+  
+  post 'pdv/show'
   
   get 'pdv/define_preco_gas'
   

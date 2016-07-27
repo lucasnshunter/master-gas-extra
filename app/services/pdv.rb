@@ -1,4 +1,21 @@
 class Pdv
+    
+    attr_accessor :pdvfantname
+    attr_accessor :pdv_cpf_cnpj
+    attr_accessor :pdvid
+    attr_accessor :pdvname
+    attr_accessor :pdvaddr
+    attr_accessor :pdvbairro
+    attr_accessor :pdvarea
+    attr_accessor :pdvadcit
+    attr_accessor :pdvaduf
+    attr_accessor :pdvadcep
+    attr_accessor :pdvphone
+    
+    def criar_pdv pdv
+        pdv
+        
+    end
     def testar_classe
         resp="metodo : testar classe"
         resp 
@@ -8,10 +25,7 @@ class Pdv
         resp
     end
     
-    def criar_pdv
-        resp="metodo : criar_pdv"
-        resp
-    end
+
     
     def deletar_pdv
         resp="metodo : deletar_pdv"
