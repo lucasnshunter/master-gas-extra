@@ -29,5 +29,14 @@ class PddController < ApplicationController
   end
 
   def pagina_teste
+      @pdd=Pdd.new
+      @tela=@pdd.capturar_prox_indece_pdd_adm
   end
+  
+  def show_por_regiao
+  end
+  
+  def show_por_representante
+  end
+  
 end

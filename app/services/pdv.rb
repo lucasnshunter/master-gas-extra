@@ -1,58 +1,46 @@
 class Pdv
     
-    attr_accessor :pdvfantname
+    attr_accessor :pdv_fantname
     attr_accessor :pdv_cpf_cnpj
-    attr_accessor :pdvid
-    attr_accessor :pdvname
-    attr_accessor :pdvaddr
-    attr_accessor :pdvbairro
-    attr_accessor :pdvarea
-    attr_accessor :pdvadcit
-    attr_accessor :pdvaduf
-    attr_accessor :pdvadcep
-    attr_accessor :pdvphone
-    
-    def criar_pdv pdv
-        pdv
-        
-    end
+    attr_accessor :pdv_name
+    attr_accessor :pdv_seguimento
+    attr_accessor :pdv_addr
+    attr_accessor :pdv_bairro
+    attr_accessor :pdv_area
+    attr_accessor :pdv_ad_city
+    attr_accessor :pdv_ad_uf
+    attr_accessor :pdv_ad_cep
+    attr_accessor :pdv_phone
+    attr_accessor :pdv_id#novo
+    attr_accessor :pdv_representative#novo
+    attr_accessor :pdv_email#novo
+    attr_accessor :pdv_login#novo
+    attr_accessor :pdv_passwd#novo
+    attr_accessor :pdv_logr#novo
+   
     def testar_classe
-        resp="metodo : testar classe"
+        servidor=Server.new
+        resp=servidor.testar_classe
         resp 
     end
-    def solicitar_lista_pdvs
-        resp="metodo : solicitar_lista_pdvs"
+    
+    def capturar_prox_indece_pdv_adm
+        servidor=Server.new
+        resp=servidor.capturar_prox_indece_pdv_adm
         resp
+    
     end
     
-
-    
-    def deletar_pdv
-        resp="metodo : deletar_pdv"
+    def verificar_status_pdv
+        servidor=Server.new
+        resp=servidor.verificar_status_pdv
+        resp 
+        
     end
-    
-    def solicitar_dados_pdv
-        resp="metodo : solicitar_dados_pdv"
-        resp
+    def ultimo_ano
+        data=Time.now
+        data.year=data.year-1
+        data
     end
-    
-    def define_preco_gas
-        resp="metodo : define_preco_gas"
-        resp
-    end
-    
-    def define_preco_agua
-        resp ="metodo : define_preco_agua"
-        resp
-    end
-    
-    def solicitar_relatorio_geral
-        resp="metodo : solicitar_relatorio_geral"
-        resp
-    end
-    
-    def solicitar_relatorio_especifico_pdv
-        resp="metodo : solicitar_relatorio_especifico_pdv"
-        resp
-    end
+   
 end

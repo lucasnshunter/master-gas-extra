@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'master/dashboard'
+
+  get 'master/pagina_teste'
+
   get 'representante/home'
 
   get 'representante/pagina_teste'
@@ -10,6 +14,8 @@ Rails.application.routes.draw do
   get 'representante/relatorio'
   
   post 'representante/show'
+  
+  post 'representante/show_representantes_por_estado'
 
   get 'pdd/home'
 
@@ -24,7 +30,19 @@ Rails.application.routes.draw do
   get 'pdd/relatorios'
 
   get 'pdd/pagina_teste'
-
+  
+  get 'pdd/listar_por_representante'
+  
+  get 'pdd/listar_por_regiao'
+  
+  post 'pdd/listar_por_representante'
+  
+  post 'pdd/listar_por_regiao'
+  
+  post 'pdd/show_por_representante'
+  
+  post 'pdd/show_por_regiao'
+  
   get 'pdv/home'
 
   get 'pdv/index'
@@ -39,11 +57,54 @@ Rails.application.routes.draw do
   
   get 'pdv/define_preco_agua'
   
-  get 'pdv/relatorios'
-
   get 'pdv/pagina_teste'
-
+  
+  get 'pdv/listar_por_representante'
+  
+  get 'pdv/listar_por_regiao'
+  
+  post 'pdv/listar_por_representante'
+  
+  post 'pdv/listar_por_regiao'
+  
+  post 'pdv/show_por_representante'
+  
+  post 'pdv/show_por_regiao'
+  
+  #############################################
+  #Rotas relacionadas as paginas de relatorios#
+  #############################################
+  get 'pdv/relatorios'
+  #####################################################
+  #Rotas relacionadas as paginas de relatorios de agua#
+  #####################################################
+  get 'pdv/relatorios_gas'
+  
+  get 'pdv/relatorios_detalhado_vendas_gas'
+  
+  get 'pdv/relatorios_resumido_vendas_gas'
+  
+  #####################################################
+  #Rotas relacionadas as paginas de relatorios de agua#
+  #####################################################
+  get 'pdv/relatorios_agua'
+  
+  get 'pdv/relatorios_detalhado_vendas_agua'
+  
+  get 'pdv/relatorios_resumido_vendas_agua'
+  
+  #############################################################
+  #Rotas relacionadas as paginas de relatorios de venda de gas#
+  #############################################################
+  get 'pdv/relatorios_credito_cell'
+  
+  get 'pdv/relatorios_detalhado_vendas_credito_cell'
+  
+  get 'pdv/relatorios_resumido_vendas_credito_cell'
+  
   get 'server/pagina_teste'
+  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
