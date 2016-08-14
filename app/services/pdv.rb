@@ -57,6 +57,13 @@ class Pdv
         resp
     #função ok
     end
+    def solicitar_dados_pdv_adm_cpf pdv_cpf_cnpj
+        servidor=Server.new
+        resp=servidor.solicitar_dados_pdv_adm_cpf pdv_cpf_cnpj
+        resp
+    #função ok
+    end
+    
     
     def excluir_pdv_adm pdv_id
         servidor=Server.new

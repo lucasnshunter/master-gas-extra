@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+      <div class="panel-heading"><center><h1><%=@contexto_pagina%></h1></center></div>
+          <div class="panel-body">
+               <form name="<%=@contexto_name%>" action="<%=@contexto_action%>" method="post">
+                     <!--Dados de identificação 3-->
+                    <%= render 'partials/cadastro_geral/inputs/namefant'%>
+                    <%= render 'partials/cadastro_geral/inputs/cpf_cnpj'%>
+                    <%= render 'partials/cadastro_geral/inputs/name'%>
+                    <!--Dados de contato 3-->
+                    <%= render 'partials/cadastro_geral/inputs/ddd'%>
+                    <%= render 'partials/cadastro_geral/inputs/telefone'%>
+                    <%= render 'partials/cadastro_geral/inputs/email'%>
+                    <!--dados de localização 6-->
+                    <%= render 'partials/cadastro_geral/inputs/cep'%>
+                    <%= render 'partials/cadastro_geral/inputs/endereco'%>
+                    <%= render 'partials/cadastro_geral/inputs/bairro'%>
+                    <%= render 'partials/cadastro_geral/inputs/logr'%>
+                    <%= render 'partials/cadastro_geral/inputs/cidade'%>
+                    <%= render 'partials/cadastro_geral/inputs/estado'%>
+                    
+                    <button type="submit" class="btn btn-primary">Subimeter</button>
+                </form>
+            </div>
+</div>

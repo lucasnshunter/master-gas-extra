@@ -101,6 +101,23 @@ class Server
         #função não funciona
     end
     
+    def solicitar_dados_pdv_adm_cpf pdv_cpf_cnpj
+        
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+        uri=URI('http://162.243.215.24/PDV/REPRES_list_pdvs')
+        
+        resp = Net::HTTP.post_form(uri ,'field'=>'CPF','value'=>pdv_cpf_cnpj,'token'=>'mentira' )
+        @record=JSON.parse(resp.body)
+        @record
+        
+    
+        #função não funciona
+    end
+    
     def excluir_pdv_adm pdv_id
         
         require "rubygems"

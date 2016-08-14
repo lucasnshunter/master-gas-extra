@@ -4,7 +4,7 @@ class PdvController < ApplicationController
   
   def pagina_teste
     @pdv=Pdv.new
-    @tela=@pdv.solicitar_lista_vendas_gas
+    @tela3=@pdv.solicitar_dados_pdv_adm_cpf
     
   end
   
@@ -17,8 +17,9 @@ class PdvController < ApplicationController
   end
 
   def new
-    
-    
+    @contexto_pagina="Criar cadastro de PDV"
+    @contexto_name="Pdv"
+    @contexto_action="show" 
   end
 
   def show
@@ -49,9 +50,10 @@ class PdvController < ApplicationController
      @pdv.pdv_bairro=params[:bairro]
      @pdv.pdv_logr=params[:logr]
     
-    
-     @tela= @pdv
-     @tela2=@pdv.criar_adm_pdv @pdv
+     
+     
+     @pdv.criar_adm_pdv @pdv
+     @tela= @pdv.solicitar_dados_pdv_adm_cpf @pdv.pdv_cpf_cnpj
   end
   def atualizar
     @pdv=Pdv.new
