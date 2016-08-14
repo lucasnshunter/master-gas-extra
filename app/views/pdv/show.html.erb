@@ -1,23 +1,99 @@
-<%=@tela.pdv_name%>
-<br>
-<%=@tela.pdv_fantname%>
-<br>
-<%=@tela.pdv_seguimento%>
-<br>
-<%=@tela.pdv_cpf_cnpj%>
-<br>
-<%=@tela.pdv_addr%>
-<br>
-<%=@tela.pdv_bairro%>
-<br>
-<%=@tela.pdv_area%>
-<br>
-<%=@tela.pdv_ad_city%>
-<br>
-<%=@tela.pdv_ad_uf%>
-<br>
-<%=@tela.pdv_ad_cep%>
-<br>
-<%=@tela.pdv_phone%>
-<br>
 
+
+<center>
+    <div class="panel panel-primary">
+         <div class="panel-heading">
+            <h3 class="panel-title">Usuario Criado</h3>
+         </div>
+         <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                     <tr>
+                        
+                        <td>ID</td>
+                        <td>Representante ID</td>
+                        <td>Nome Fantasia</td>
+                        <td>Nome</td>
+                        <td>CPF/CNPJ</td>
+                     </tr>
+                </thead>
+
+                <tbody>
+                     <tr>
+                        <td><%=@tela.pdv_id%></td>
+                        <td><%=@tela.pdv_representative%></td>
+                        <td><%=@tela.pdv_fantname%></td>
+                        <td><%=@tela.pdv_name%></td>
+                        <td><%=@tela.pdv_cpf_cnpj%></td>
+                    </tr>
+                </tbody>
+                <br>
+                <thead>
+                     <tr>
+                        <td>Seguimento</td></td>
+                        <td>Saldo($)</td>
+                        <td>Comição(%)</td>
+                         <td>DDD</td>
+                        <td>Telefone</td>
+                     </tr>
+                </thead>
+
+                <tbody>
+                     <tr>
+                        <td><%=@tela.pdv_seguimento%></td>
+                        <td><%=@tela.pdv_saldo%></td>
+                        <td><%=@tela.pdv_comicao%></td>
+                        <td><%=@tela.pdv_ddd%></td>
+                        <td><%=@tela.pdv_phone%></td>
+                        
+                    </tr>
+                </tbody>
+                <br>
+                <table class="table table-striped">
+                <thead>
+                     <tr>
+                        <td>Email</td>
+                        <td>CEP</td>
+                        <td>Endereço</td>
+                        <td>Logradouro</td>
+                         <td>Bairro</td>
+                     </tr>
+                </thead>
+
+                <tbody>
+                        <td><%=@tela.pdv_email%></td>
+                        <td><%=@tela.pdv_ad_cep%></td>
+                        <td><%=@tela.pdv_addr%></td>
+                        <td><%=@tela.pdv_logr%></td>
+                        <td><%=@tela.pdv_bairro%></td>
+                    </tr>
+                </tbody>
+                
+                <thead>
+                     <tr>
+                       
+                        <td>Área</td>
+                        <td>Cidade</td>
+                        <td>Estado</td>
+                        <td><button type="button" class="btn btn-info"> Atualizar cadastro</button></td>
+                        <td><button type="button" class="btn btn-danger"> Deletar cadastro</button></td>
+                     </tr>
+                </thead>
+
+                <tbody>
+                     <tr>
+                        
+                        <td><%=@tela.pdv_area%></td>
+                        <td><%=@tela.pdv_ad_city%></td>
+                        <td><%=@tela.pdv_ad_uf%></td>
+                        <td><button type="button" class="btn btn-success"> Gerenciar conta</button></td>
+                        <td><button type="button" class="btn btn-warning"> Solicitar relatorios</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+     </div>
+
+    </panel>
+</center>

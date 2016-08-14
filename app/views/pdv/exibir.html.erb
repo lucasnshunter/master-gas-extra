@@ -1,0 +1,137 @@
+ 
+<%=@tela%>
+<center>
+    <div class="panel panel-primary">
+         <div class="panel-heading">
+            <h3 class="panel-title">Usuario Criado</h3>
+         </div>
+         <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                     <tr>
+                        <td>Nome Fantasia</td>
+                        <td>Responsavel</td>
+                        <td>CPF/CNPJ</td>
+                        <td>Classe</td>
+                        <td>Representante</td>
+                     </tr>
+                </thead>
+                <%@tela.each do |pdv|%>
+                <tbody>
+                     <tr>
+                        <td><%=pdv['nomefantasia']%></td>
+                        <td><%=pdv['uname']%></td>
+                        <td><%=pdv['CPF']%></td>
+                        <td><%=pdv['class']%></td>
+                        <td><%=pdv['REPRES']%></td>
+                <%end%>
+                </body>  
+                </table>
+                <table class="table table-hover">
+                <thead>
+                     <tr>
+                        <td>Seguimento</td>
+                        <td>Saldo($)</td>
+                        <td>Comição</td>
+                        <td>DDD</td>
+                        <td>Telefone</td>
+                     </tr>
+                </thead>
+                <%@tela.each do |pdv|%>
+                <tbody>
+                     <tr>
+                        <td><%=pdv['seguimento']%></td>
+                        <td><%=pdv['saldo']%></td>
+                        <td><%=pdv['comicao']%></td>
+                        <td><%=pdv['defaultddd']%></td>
+                        <td><%=pdv['phone']%></td>
+                 </body>
+                <%end%>
+                  
+                </table>
+                
+                <table class="table table-hover">
+                <thead>
+                     <tr>
+                        <td>Email</td>
+                        <td>CEP</td>
+                        <td>Endereço</td>
+                        <td>Logradouro</td>
+                         <td>Bairro</td>
+                     </tr>
+                </thead>
+
+                <%@tela.each do |pdv|%>
+                <tbody>
+                     <tr>
+                        <td><%=pdv['email']%></td>
+                        <td><%=pdv['CEP']%></td>
+                        <td><%=pdv['address']%></td>
+                        <td><%=pdv['logradouro']%></td>
+                        <td><%=pdv['bairro']%></td>
+                        <%@id=pdv['_id']%>
+                </body>
+                <%end%>
+                  
+                <table class="table table-hover">
+                
+                <thead>
+                     <tr>
+                       
+                        <td>Área</td>
+                        <td>Cidade</td>
+                        <td>Estado</td>
+                        <td>
+                           <form name="pdv" action="atualizar" method="post">
+                           <input type="hidden" name="id" value=<%=@id%>>
+                           <br>
+                           <button type="submit" class="btn btn-info">Atualizar cadastro <i class="fa fa-user" aria-hidden="true"></i></button>
+                           </form>
+                        </td>
+                    
+                        <td>
+                           <form name="pdv" action="excluir" method="post">
+                           <input type="hidden" name="id" value=<%=@id%>>
+                           <br>
+                           <button type="submit" class="btn btn-danger">Excluir cadastro <i class="fa fa-trash" aria-hidden="true"></i></button>
+                           </form>
+                        </td>
+                    </tr>
+                </thead>
+                <%@tela.each do |pdv|%>
+                <tbody>
+                     
+                    <tr>
+                        <td><%=pdv['area']%></td>
+                        <td><%=pdv['city']%></td>
+                        <td><%=pdv['UF']%></td>
+                        <td>
+                           <form name="representante" action="excluir_representante" method="post">
+                           <input type="hidden" name="id" value=<%=@id%>>
+                           <br>
+                           <button type="submit" class="btn btn-warning">Solicitar Relatorios <i class="fa fa-table" aria-hidden="true"></i></button>
+                           </form>
+                        </td>
+                        
+                        <td>
+                           <form name="representante" action="excluir_representante" method="post">
+                           <input type="hidden" name="id" value=<%=@id%>>
+                           <br>
+                           <button type="submit" class="btn btn-success">Gerenciar PDV <i class="fa fa-cogs" aria-hidden="true"></i></button>
+                           </form>
+                        </td>
+                        
+                    </tr>
+                
+                </tbody>
+                 <%@id=pdv['_id']=%>
+                  <%end%>
+                 
+                
+                </table>
+
+        </div>
+     </div>
+
+    </panel>
+</center>

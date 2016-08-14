@@ -11,18 +11,17 @@
         
      </tr>
   </thead>
-<%@tela.each do |pdv|%>
+<%@tela.each do |representantes|%>
  <tbody>
      <tr>
-        <td><%=pdv['nomefantasia']%></td>
-        <td><%=pdv['uname']%></td>
-        <td><%=pdv['phone']%></td>
-        <td><%=pdv['city']%></td>
-        <td><%=pdv['_id']%></td>
+        <td><%=representantes['nomefantasia']%></td>
+        <td><%=representantes['uname']%></td>
+        <td><%=representantes['phone']%></td>
+        <td><%=representantes['city']%></td>
        
         <td>
-        <form name="pdd" action="exibir" method="post">
-            <input type="hidden" name="id" value=<%=pdv['_id']%>>
+        <form name="representante" action="show_representante" method="post">
+            <input type="hidden" name="id" value=<%=representantes['_id']%>>
             <br>
             <button type="submit" class="btn btn-success">exibir <i class="fa fa-eye" aria-hidden="true"></i></button>
         </form>

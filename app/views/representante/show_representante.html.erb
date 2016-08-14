@@ -1,0 +1,108 @@
+
+<table class="table table-hover">
+  <thead>
+     <tr>
+        <td>Nome fantasia</td>
+        <td>Responsavel</td>
+        <td>CPF</td>
+        <td>Classe</td>
+        <td>ID</td>
+     </tr>
+  </thead>
+<%@tela.each do |representantes|%>
+<tbody>
+     <tr>
+        <td><%=representantes['nomefantasia']%></td>
+        <td><%=representantes['uname']%></td>
+        <td><%=representantes['CPF']%></td>
+        <td><%=representantes['class']%></td>
+        <td><%=representantes['_id']%></td>
+<%end%>
+  
+</table>
+
+<table class="table table-hover">
+  <thead>
+     <tr>
+        <td>DDD</td>
+        <td>Telefone</td>
+        <td>Email</td>
+        <td>Login</td>
+        <td>Status</td>
+     </tr>
+  </thead>
+<%@tela.each do |representantes|%>
+<tbody>
+     <tr>
+        <td><%=representantes['defaultddd']%></td>
+        <td><%=representantes['phone']%></td>
+        <td><%=representantes['email']%></td>
+        <td><%=representantes['login']%></td>
+        <td><%=representantes['STATUS']%></td>
+<%end%>
+  
+<table class="table table-hover">
+  <thead>
+     <tr>
+        <td>Endereço</td>
+        <td>Bairro</td>
+        <td>Logradouro</td>
+        <td>CEP</td>
+        
+        
+     </tr>
+  </thead>
+<%@tela.each do |representantes|%>
+<tbody>
+     <tr>
+        <td><%=representantes['address']%></td>
+        <td><%=representantes['bairro']%></td>
+        <td><%=representantes['logradouro']%></td>
+        <td><%=representantes['CEP']%></td>
+<%end%>
+</table>
+<table class="table table-hover">
+  <thead>
+     <tr>
+        
+        <td>Área</td>
+        <td>Cidade</td>
+        <td>Estado</td>
+        
+        
+     </tr>
+  </thead>
+<%@tela.each do |representantes|%>
+<tbody>
+     <tr>
+        <td><%=representantes['area']%></td>
+        <td><%=representantes['city']%></td>
+        <td><%=representantes['UF']%></td>
+     </tr>
+</tbody>
+ <%@id=representantes['_id']=%>
+  <%end%>
+ 
+
+</table>
+   <div class="panel panel-primary">
+       <div class="panel-body">
+         <div class="panel-heading">
+            <h3 class="panel-title">Painel de Funções</h3>
+         </div>
+         
+         <div class="panel-body">
+          <form name="representante" action="excluir_representante" method="post">
+            <input type="hidden" name="id" value=<%=@id%>>
+            <br>
+            <button type="submit" class="btn btn-danger">excluir <i class="fa fa-eye" aria-hidden="true"></i></button>
+          </form>
+         </div>
+    
+        
+        
+    
+  </div>
+   </div>
+  
+

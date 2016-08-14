@@ -6,8 +6,8 @@ class RepresentanteController < ApplicationController
   def pagina_teste
        @representante=Representante.new
        @tela=@representante.capturar_prox_indece_representante
-       @tela2=@representante.solicitar_lista_representantes
-      
+       
+     
   end
 
   def new
@@ -19,7 +19,7 @@ class RepresentanteController < ApplicationController
   end
 
   def index
-      
+     
       
   end
 
@@ -55,8 +55,32 @@ class RepresentanteController < ApplicationController
      @tela2=@representante.criar_representante @representante
      @tela=@representante
   end
-  def show_representantes_por_estado
+  def show_representantes_por_ddd
       @representante=Representante.new
-      @tela=@representante.solicitar_lista_representantes
+      @ddd=params[:ddd]
+      @tela=@representante.solicitar_lista_representantes @ddd
+      
+  end
+  
+  def show_representante
+      @id=params[:id]
+      @representante=Representante.new
+      @tela=@representante.solicitar_dados_representante @id
+      
+  end
+  def excluir_representante
+      @representante=Representante.new
+      representante_id=params[:id]
+     # @tela=@representante.solicitar_dados_representante representante_id
+      @tela2=@representante.excluir_representante representante_id
   end
 end
+
+
+
+
+
+
+
+
+

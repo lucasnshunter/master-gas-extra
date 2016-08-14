@@ -33,9 +33,15 @@ class Representante
        resp
     end
     
-    def solicitar_lista_representantes
+    def solicitar_lista_representantes ddd
         servidor=Server.new
-        resp=servidor.solicitar_lista_representantes
+        resp=servidor.solicitar_lista_representantes ddd
+        resp
+    end
+    
+    def solicitar_dados_representante representante_id
+        servidor=Server.new
+        resp=servidor.solicitar_dados_representante representante_id
         resp
     end
     
@@ -45,5 +51,10 @@ class Representante
         resp
     end
     
+    def excluir_representante representante_id
+        servidor=Server.new
+        resp=servidor.excluir_representante representante_id
+        resp
+    end
 end
 

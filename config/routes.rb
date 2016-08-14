@@ -15,8 +15,12 @@ Rails.application.routes.draw do
   
   post 'representante/show'
   
-  post 'representante/show_representantes_por_estado'
-
+  post 'representante/show_representantes_por_ddd'
+  
+  post 'representante/show_representante'
+  
+  post 'representante/excluir_representante'
+  
   get 'pdd/home'
 
   get 'pdd/new'
@@ -43,15 +47,31 @@ Rails.application.routes.draw do
   
   post 'pdd/show_por_regiao'
   
+  post 'pdd/exibir'
+  
+  post 'pdd/excluir'
+  
+  post 'pdd/atualizar'
+  
+  post 'pdd/atualizado'
+  
   get 'pdv/home'
 
   get 'pdv/index'
+  
+  post 'pdv/exibir'
 
   get 'pdv/new'
 
   get 'pdv/show'
   
   post 'pdv/show'
+  
+  post 'pdv/excluir'
+  
+  post 'pdv/atualizar'
+  
+  post 'pdv/atualizado'
   
   get 'pdv/define_preco_gas'
   
