@@ -100,12 +100,6 @@ class PdvController < ApplicationController
   end
  
   
-  def define_preco_gas
-  end
-  
-  def define_preco_agua
-  end
-  
 
   
   def listar_por_representante
@@ -136,7 +130,46 @@ class PdvController < ApplicationController
   def relatorios
     
   end
+  def relatorio_unitario
+    @pdv=Pdv.new
+    @pdv_id=params[:id]
+    @tela=@pdv.solicitar_lista_vendas_cell_pdvs 
+    
+  end
   
+  def relatorios_unitarios
+    @pdv=Pdv.new
+    @id=params[:id]
+    @tela=@pdv.solicitar_lista_vendas_cell_pdvs 
+    
+  end
+  
+  def relatorio_unitario_celular
+    @pdv=Pdv.new
+    @id=params[:id]
+    @tela=@pdv.solicitar_lista_vendas_cell_pdvs 
+    
+  end
+  
+  def relatorio_unitario_celular_resumido
+    @pdv=Pdv.new
+    @id=params[:id]
+    @tela=@pdv.solicitar_lista_vendas_cell_pdvs 
+    
+  end
+  
+  def relatorio_unitario_celular_detalhado
+    @pdv=Pdv.new
+    @id=params[:id]
+    @tela=@pdv.solicitar_lista_vendas_cell_pdvs 
+    
+  end
+  
+  def regime_pesquisa
+    @pdv=Pdv.new
+    @id=params[:id]
+    @tela=@pdv.solicitar_lista_vendas_cell_pdvs 
+  end
   def relatorios_gas
     
   end

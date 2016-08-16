@@ -11,8 +11,9 @@ class RepresentanteController < ApplicationController
   end
 
   def new
-     @nome_da_view="Criar usuario"
-     @representante=Representante.new
+      @contexto_action="show"
+      @contexto_name="representante"
+      @contexto_pagina="Cadaastrar Representante Admin"
      
      
      
@@ -52,8 +53,10 @@ class RepresentanteController < ApplicationController
      @representante.representante_logradouro=params[:logr]
      @representante.representante_ad_city=params[:adcit]
      @representante.representante_ad_uf=params[:estado]
-     @tela2=@representante.criar_representante @representante
-     @tela=@representante
+    
+    
+     @representante.criar_representante @representante
+     @tela= @representante.solicitar_dados_representante_cpf @representante.representante_cpf_cnpj
   end
   def show_representantes_por_ddd
       @representante=Representante.new
@@ -68,7 +71,7 @@ class RepresentanteController < ApplicationController
       @tela=@representante.solicitar_dados_representante @id
       
   end
-  def excluir_representante
+  def excluir
       @representante=Representante.new
       representante_id=params[:id]
      # @tela=@representante.solicitar_dados_representante representante_id

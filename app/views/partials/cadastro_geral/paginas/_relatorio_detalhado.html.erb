@@ -1,0 +1,42 @@
+
+<center>
+    <div class="panel panel-primary">
+         <div class="panel-heading">
+            <h3 class="panel-title">Relatorio Detalhado de venda de <%=@contexto_produto%></h3>
+         </div>
+         <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                     <tr>
+                        <td>PDV ID</td>
+                        <td>Telefone</td>
+                        <td>Data</td>
+                        <td>Custo real</td>
+                        <td>Custo de venda</td>
+                        <td>Produto</td>
+                       
+                     </tr>
+                </thead>
+                <%@tela.each do |item|%>
+                <tbody>
+                     <tr>
+                        <td><%=item['pdvid']%></td>
+                        <td><%=item['phone']%></td>
+                        <td><%=item['timestamp']%></td>
+                        <td><%=item['custo']%></td>
+                        <td><%=item['face']%></td>
+                        <td><%=item['_id']%></td>
+                      
+                <%end%>
+                </body>  
+                </table>
+                
+                
+                
+                
+
+        </div>
+     </div>
+
+    </panel>
+</center>

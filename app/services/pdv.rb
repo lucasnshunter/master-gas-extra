@@ -79,10 +79,30 @@ class Pdv
     #função ok    
     end
    
-    def solicitar_lista_vendas_gas
+    def solicitar_lista_vendas_gas_pdv pdv_id
         
         servidor=Server.new
-        resp=servidor.solicitar_lista_vendas_gas
+        resp=servidor.solicitar_lista_vendas_gas_pdv pdv_id
+        resp
+    end
+    def solicitar_lista_vendas_gas_pdvs 
+        
+        servidor=Server.new
+        resp=servidor.solicitar_lista_vendas_gas_pdvs 
+        resp
+    end
+     
+    def solicitar_lista_vendas_cell_pdv pdv_id
+        
+        servidor=Server.new
+        resp=servidor.solicitar_lista_vendas_cell_pdv pdv_id
+        resp
+    end
+    
+    def solicitar_lista_vendas_cell_pdvs 
+        
+        servidor=Server.new
+        resp=servidor.solicitar_lista_vendas_cell_pdvs 
         resp
     end
 end

@@ -1,0 +1,35 @@
+
+<table class="table table-hover">
+  <thead>
+     <tr>
+        <td>Nome fantasia</td>
+        <td>Responsavel</td>
+        <td>telefone</td>
+        <td>cidade</td>
+        <td></td>
+        <td></td>
+        
+     </tr>
+  </thead>
+<%@tela.each do |item|%>
+ <tbody>
+     <tr>
+        <td><%=item['nomefantasia']%></td>
+        <td><%=item['uname']%></td>
+        <td><%=item['phone']%></td>
+        <td><%=item['city']%></td>
+        <td><%=item['_id']%></td>
+       
+        <td>
+       
+           <form name="pdd" action="exibir" method="post">
+            <input type="hidden" name="id" value=<%=item['_id']%>>
+            <br>
+            <button type="submit" class="btn btn-success">exibir <i class="fa fa-eye" aria-hidden="true"></i></button>
+           </form>
+          
+        </td>
+     </tr>
+  </tbody>
+  <%end%>
+</table>

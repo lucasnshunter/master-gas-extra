@@ -4,6 +4,9 @@ class PddController < ApplicationController
   end
 
   def new
+      @contexto_action="show"
+      @contexto_name="pdd"
+      @contexto_pagina="Cadaastrar PDD Admin"
   end
 
   def show
@@ -32,8 +35,8 @@ class PddController < ApplicationController
      @pdd.pdd_area=params[:area]
      @pdd.pdd_bairro=params[:bairro]
      @pdd.pdd_logr=params[:logr]
-     @tela=@pdd
-     @tela2=@pdd.criar_adm_pdd @pdd
+     @pdd.criar_adm_pdd @pdd
+     @tela= @pdd.solicitar_dados_pdd_adm_cpf @pdd.pdd_cpf_cnpj
     
   end
 

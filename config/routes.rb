@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   
   post 'representante/show_representante'
   
-  post 'representante/excluir_representante'
+  post 'representante/excluir'
   
   get 'pdd/home'
 
@@ -95,6 +95,18 @@ Rails.application.routes.draw do
   #Rotas relacionadas as paginas de relatorios#
   #############################################
   get 'pdv/relatorios'
+  
+  post 'pdv/relatorio_unitario'
+  
+  post 'pdv/relatorios_unitarios'
+  
+  post 'pdv/relatorio_unitario_celular'
+  
+  post 'pdv/relatorio_unitario_celular_resumido'
+  
+  post 'pdv/relatorio_unitario_celular_detalhado'
+  
+  post 'pdv/regime_pesquisa'
   #####################################################
   #Rotas relacionadas as paginas de relatorios de agua#
   #####################################################

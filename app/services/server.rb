@@ -170,7 +170,21 @@ class Server
     #####################################################
     ######Metodos relacionados aos relatorios de PDVs####
     #####################################################
-    def solicitar_lista_vendas_gas
+    def solicitar_lista_vendas_gas_pdv pdv_id
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+        uri=URI( 'http://162.243.215.24/PDV/PDV_get_gas_sales')
+        
+        resp = Net::HTTP.post_form(uri,'pdv_id'=>pdv_id,'token'=>"mentira")
+        @record=JSON.parse(resp.body)
+        @record
+        #função ok
+        #,'pdv_id'=>"",'userphone'=>"",'starttime'=>"",'endtime'=>""
+    end
+    def solicitar_lista_vendas_gas_pdvs
         require "rubygems"
         require 'json'
         require "net/http"
@@ -185,6 +199,35 @@ class Server
         #,'pdv_id'=>"",'userphone'=>"",'starttime'=>"",'endtime'=>""
     end
     
+    def solicitar_lista_vendas_cell_pdv pdv_id
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+        uri=URI( 'http://162.243.215.24/PDV/PDV_get_cell_sales')
+        
+        resp = Net::HTTP.post_form(uri,'pdv_id'=>pdv_id,'token'=>"mentira")
+        @record=JSON.parse(resp.body)
+        @record
+        #função ok
+        #,'pdv_id'=>"",'userphone'=>"",'starttime'=>"",'endtime'=>""
+    end
+    
+    def solicitar_lista_vendas_cell_pdvs 
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+        uri=URI( 'http://162.243.215.24/PDV/PDV_get_cell_sales')
+        
+        resp = Net::HTTP.post_form(uri,'pdvid'=>31,'token'=>"mentira")
+        @record=JSON.parse(resp.body)
+        @record
+        #função ok
+        #,'pdv_id'=>"",'userphone'=>"",'starttime'=>"",'endtime'=>""
+    end
     #####################################################
     ######Metodos relacionados ao trabalho com PDDs######
     #####################################################
@@ -260,6 +303,23 @@ class Server
         uri=URI('http://162.243.215.24/PDV/REPRES_list_pdds')
         
         resp = Net::HTTP.post_form(uri ,'field'=>'_id','value'=>pdd_id,'token'=>'mentira' )
+        @record=JSON.parse(resp.body)
+        @record
+        
+    
+        #função funciona
+    end
+    
+     def solicitar_dados_pdd_adm_cpf pdd_cpf_cnpj
+        
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+        uri=URI('http://162.243.215.24/PDV/REPRES_list_pdds')
+        
+        resp = Net::HTTP.post_form(uri ,'field'=>'CPF','value'=>pdd_cpf_cnpj,'token'=>'mentira' )
         @record=JSON.parse(resp.body)
         @record
         
@@ -360,6 +420,22 @@ class Server
         @record
         #função ok
     end
+    
+    def solicitar_dados_representante_cpf representante_cpf_cnpj
+        
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+       
+         uri=URI('http://162.243.215.24/PDV/REPRES_list_repres')
+        
+        resp = Net::HTTP.post_form(uri ,'field'=>'CPF','value'=>representante_cpf_cnpj,'token'=>'mentira' )
+        @record=JSON.parse(resp.body)
+        @record
+        #função ok
+    end
+    
     
     def criar_representante representante 
         

@@ -45,6 +45,12 @@ class Pdd
       resp=servidor.solicitar_dados_pdd_adm pdd_id
       resp
     end
+    
+    def solicitar_dados_pdd_adm_cpf pdd_cpf_cnpj
+      servidor=Server.new
+      resp=servidor.solicitar_dados_pdd_adm_cpf pdd_cpf_cnpj
+      resp
+    end
     def atualizar_adm_pdd pdd
       servidor=Server.new
       resp=servidor.atualizar_adm_pdd pdd

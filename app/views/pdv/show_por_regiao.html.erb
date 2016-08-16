@@ -1,32 +1,3 @@
-<table class="table table-hover">
-  <thead>
-     <tr>
-        <td>Nome fantasia</td>
-        <td>Responsavel</td>
-        <td>telefone</td>
-        <td>cidade</td>
-        <td></td>
-        <td></td>
-        
-     </tr>
-  </thead>
-<%@tela.each do |pdv|%>
- <tbody>
-     <tr>
-        <td><%=pdv['nomefantasia']%></td>
-        <td><%=pdv['uname']%></td>
-        <td><%=pdv['phone']%></td>
-        <td><%=pdv['city']%></td>
-        <td><%=pdv['_id']%></td>
-       
-        <td>
-        <form name="pdv" action="exibir" method="post">
-            <input type="hidden" name="id" value=<%=pdv['_id']%>>
-            <br>
-            <button type="submit" class="btn btn-success">exibir <i class="fa fa-eye" aria-hidden="true"></i></button>
-        </form>
-        </td>
-     </tr>
-  </tbody>
-  <%end%>
-</table>
+
+            <%= render 'partials/cadastro_geral/paginas/index'%>
+          

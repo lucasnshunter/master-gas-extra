@@ -45,6 +45,12 @@ class Representante
         resp
     end
     
+    def solicitar_dados_representante_cpf representante_cpf_cnpj
+        servidor=Server.new
+        resp=servidor.solicitar_dados_representante_cpf representante_cpf_cnpj
+        resp
+    end
+    
     def criar_representante representante
         servidor=Server.new
         resp=servidor.criar_representante representante
