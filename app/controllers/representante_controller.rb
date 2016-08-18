@@ -65,7 +65,7 @@ class RepresentanteController < ApplicationController
       
   end
   
-  def show_representante
+  def exibir
       @id=params[:id]
       @representante=Representante.new
       @tela=@representante.solicitar_dados_representante @id

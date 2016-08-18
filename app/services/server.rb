@@ -222,7 +222,7 @@ class Server
         
         uri=URI( 'http://162.243.215.24/PDV/PDV_get_cell_sales')
         
-        resp = Net::HTTP.post_form(uri,'pdvid'=>31,'token'=>"mentira")
+        resp = Net::HTTP.post_form(uri,'token'=>"mentira")
         @record=JSON.parse(resp.body)
         @record
         #função ok
