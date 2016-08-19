@@ -14,7 +14,7 @@ class Representante
     attr_accessor :representante_addr
     attr_accessor :representante_area
     attr_accessor :representante_bairro
-    attr_accessor :representante_logradouro
+    attr_accessor :representante_logr
     attr_accessor :representante_ad_city
     attr_accessor :representante_ad_uf
     
@@ -54,6 +54,12 @@ class Representante
     def criar_representante representante
         servidor=Server.new
         resp=servidor.criar_representante representante
+        resp
+    end
+    
+    def atualizar_representante representante
+        servidor=Server.new
+        resp=servidor.atualizar_representante representante
         resp
     end
     

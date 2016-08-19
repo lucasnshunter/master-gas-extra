@@ -10,7 +10,7 @@ class PddController < ApplicationController
   end
 
   def show
-    @action_display_controller=2
+     @action_display_controller=2
      @nome_da_view="Criar usuario"
      @pdd=Pdd.new
      #dados logicos da aplicação

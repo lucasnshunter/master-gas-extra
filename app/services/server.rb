@@ -310,7 +310,7 @@ class Server
         #função funciona
     end
     
-     def solicitar_dados_pdd_adm_cpf pdd_cpf_cnpj
+    def solicitar_dados_pdd_adm_cpf pdd_cpf_cnpj
         
         require "rubygems"
         require 'json'
@@ -458,6 +458,36 @@ class Server
         'usrarea'=>representante.representante_area,
         'usrbairro'=>representante.representante_bairro,
         'usrlogr'=>representante.representante_logradouro,
+        'usradcit'=>representante.representante_ad_city,
+        'usraduf'=>representante.representante_ad_uf,
+        'usradcep'=>representante.representante_ad_cep)
+        @record=JSON.parse(resp.body)
+        @record
+        #função ok
+    end
+    
+     
+    def atualizar_representante representante 
+        
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+        uri=URI('http://162.243.215.24/PDV/REPRES_register_repres')
+        
+        resp = Net::HTTP.post_form(uri,
+        'userid'=>representante.representante_id,
+        'usrname'=>representante.representante_name,
+        'usrcpf'=>representante.representante_cpf_cnpj,
+        'nomefantasia'=>representante.representante_fantname,
+        'usrddd'=>representante.representante_ddd,
+        'usrphone'=>representante.representante_phone,
+        'usrmail'=>representante.representante_email,
+        'usraddr'=>representante.representante_addr,
+        'usrarea'=>representante.representante_area,
+        'usrbairro'=>representante.representante_bairro,
+        'usrlogr'=>representante.representante_logr,
         'usradcit'=>representante.representante_ad_city,
         'usraduf'=>representante.representante_ad_uf,
         'usradcep'=>representante.representante_ad_cep)

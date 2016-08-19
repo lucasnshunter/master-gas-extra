@@ -71,6 +71,42 @@ class RepresentanteController < ApplicationController
       @tela=@representante.solicitar_dados_representante @id
       
   end
+  
+  def atualizar
+    @representante=Representante.new
+    @contexto_name="representante"
+    @contexto_action="atualizado"
+    @id=params[:id]
+    
+    @tela=@representante.solicitar_dados_representante @id
+  end
+  def atualizado
+     @action_display_controller=2
+     @nome_da_view="Criar usuario"
+     @representante=Representante.new
+     #dados logicos da aplicação
+     @representante.representante_id=params[:id]
+     #dados cadastrais e de  3
+     @representante.representante_fantname=params[:fantname]
+     @representante.representante_name=params[:name]
+     @representante.representante_cpf_cnpj=params[:cpf_cnpj]
+     #dados de contato 3
+     @representante.representante_ddd=params[:ddd]
+     @representante.representante_phone=params[:phone]
+     @representante.representante_email=params[:email]
+     #dados de endereço e localização 7
+     @representante.representante_addr=params[:addr]
+     @representante.representante_ad_city=params[:adcit]
+     @representante.representante_ad_uf=params[:estado]
+     @representante.representante_ad_cep=params[:adcep]
+     @representante.representante_area=params[:area]
+     @representante.representante_bairro=params[:bairro]
+     @representante.representante_logr=params[:logr]
+     @id= @representante.representante_id  
+     @tela=@representante.solicitar_dados_representante @id
+     
+  end
+  
   def excluir
       @representante=Representante.new
       representante_id=params[:id]

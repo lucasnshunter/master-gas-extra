@@ -1,0 +1,80 @@
+
+<h1>Partiel atualizar</h1>
+<div class="panel-body">
+       <form name="pdd" action="atualizado" method="post">
+           
+           
+<%@tela.each do |item|%>
+                
+                        
+                        <div class="form-group">
+                <label for="exampleInputPassword1">Nome fantasia</label>
+                <input type="text" name="fantname" value="<%=item['nomefantasia']%>" class="form-control"  >
+            </div>
+                       
+                        <div class="form-group">
+                <label for="exampleInputPassword1">Nome</label>
+                <input type="text" name="name" value=" <%=item['uname']%>" class="form-control"  >
+            </div>
+                        
+                        <div class="form-group">
+                <label for="exampleInputPassword1"> CPF/CNPJ</label>
+                <input type="number" name="cpf_cnpj" value="<%=item['CPF']%>" class="form-control"  >
+            </div>
+                        
+                        <%=item['rank']%>
+                       
+                     
+                        
+                       
+                        <div class="form-group">
+                <label for="exampleInputPassword1">DDD</label>
+                <input type="number" name="ddd" class="form-control" value="<%=item['defaultddd']%>" >
+            </div>
+                        
+                        <div class="form-group">
+                <label for="exampleInputPassword1">Telefone</label>
+                <input type="number" name="phone" class="form-control" value="<%=item['phone']%>" >
+            </div>
+                       
+                        <div class="form-group">
+                <label for="exampleInputPassword1">Email</label>
+                <input type="text" name="email" class="form-control" value=" <%=item['email']%>" >
+            </div>
+                        
+                        
+             <div class="form-group">
+                <label for="exampleInputPassword1">CEP</label>
+                <input type="number" name="adcep" class="form-control" value="<%=item['CEP']%>" >
+            </div>
+                        
+             <div class="form-group">
+                <label for="exampleInputPassword1">Endereço</label>
+                <input type="text" name="addr" class="form-control" value="<%=item['address']%>" >
+            </div>
+                       
+            <div class="form-group">
+                <label for="exampleInputPassword1">Logradouro</label>
+                <input type="text" name="logr" class="form-control" value=" <%=item['logradouro']%>" >
+            </div>
+                        
+                         
+             <div class="form-group">
+                <label for="exampleInputPassword1">Bairro</label>
+                <input type="text" name="bairro" class="form-control" value="<%=item['bairro']%>">
+            </div>
+             
+                       
+            <div class="form-group">
+                <label for="exampleInputPassword1">Cidade</label>
+                <input type="text" name="adcit" class="form-control" value=" <%=item['city']%>" >
+            </div>
+            <div class="form-group">
+              
+                <input type="hidden" name="id" class="form-control" value=" <%=item['_id']%>" >
+            </div>
+                       
+<%end%>
+            <button type="submit" class="btn btn-primary">Subimeter</button>
+        </form>
+    </div>

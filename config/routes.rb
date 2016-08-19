@@ -21,7 +21,11 @@ Rails.application.routes.draw do
   
   post 'representante/excluir'
   
-   post 'representante/exibir'
+  post 'representante/atualizar'
+  
+  post 'representante/atualizado'
+  
+  post 'representante/exibir'
   
   get 'pdd/home'
 
