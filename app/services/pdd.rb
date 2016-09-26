@@ -1,5 +1,5 @@
 class Pdd
-     #dados logicos
+    #dados logicos
     attr_accessor :pdd_id
     attr_accessor :pdd_representative
     #dados de identificação cadastral
@@ -21,6 +21,8 @@ class Pdd
     attr_accessor :pdd_ad_city
     attr_accessor :pdd_ad_uf
     attr_accessor :pdd_ad_cep
+    attr_accessor :pdd_usr_lat
+    attr_accessor :pdd_usr_lon
         
     def capturar_prox_indece_pdd_adm
       servidor=Server.new    
@@ -60,6 +62,21 @@ class Pdd
       servidor=Server.new
       resp=servidor.excluir_pdd_adm pdd_id
       resp
+    end
+    def configurar_pdd pdd_id,credito_gas,credito_agua,custo_gas,custo_agua,sell_agua,sell_gas,phonepos,status
+        servidor=Server.new
+        resp=servidor.configurar_pdd pdd_id,credito_gas,credito_agua,custo_gas,custo_agua,sell_agua,sell_gas,phonepos,status
+        
+        resp
+    end
+    
+    #solicitar relatorios de entregas
+    
+    def solicitar_lista_entregas_pdd pdd,kind,start_date,end_date
+       servidor=Server.new
+       resp=servidor.solicitar_lista_entregas_pdd pdd,kind,start_date,end_date
+       resp
+      
     end
 end
 

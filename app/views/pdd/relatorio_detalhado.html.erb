@@ -1,0 +1,134 @@
+
+
+<%=@pdd_%>
+<br>
+<%=@tipo_relatorio%>
+<br>
+<%=@entrada%>
+<br>
+<%=@tela2%>
+<br>
+<%=@tela%>
+<br>
+
+<br>
+<br>
+
+
+
+
+
+<script>
+function cont(){
+var conteudo = document.getElementById('print').innerHTML,
+tela_impressao = window.open('about:blank');
+tela_impressao.document.write(conteudo);
+tela_impressao.window.print();
+tela_impressao.window.close();
+
+}
+</script>
+
+ <style>
+                    .mygrid-wrapper-div {
+                        overflow: scroll;
+                        height:300px;
+                    }
+                </style>
+
+
+
+
+
+
+
+
+<br>
+<center>
+    <div id="print" class="conteudo">
+    <div class="panel panel-primary">
+         <div class="panel-heading">
+            <h3 class="panel-title">Relatorio Detalhado de venda de <%=@contexto_produto%></h3>
+         </div>
+         <div class="panel-body">
+             <div class="mygrid-wrapper-div" id="relatorio">
+            <table class="table table-striped">
+                <thead>
+                     <tr>
+                        
+                        <td>Telefone</td>
+                        <td>Data</td>
+                        <td>Custo real</td>
+                        <td>Custo de venda</td>
+                        <td>Registro de operação</td>
+                       
+                     </tr>
+                </thead>
+               
+          
+              
+                <%@tela.each do |item|%>
+                 
+                
+                <tbody>
+                   
+                     <tr>
+                       
+                      </tr>
+                     
+                <%end%>
+              
+                </tbody>
+                </table>
+            
+                
+          </div>
+              
+                
+                <table class="table table-striped">
+                <thead>
+                     <tr>
+                        <td>Soma dos custos reais</td>
+                        <td>Soma dos custos de venda</td>
+                        <td>Soma dos lucros das vendas</td>
+                     </tr>
+                </thead>
+                
+                <tbody>
+                     <tr>
+                       
+                       
+                        <%@tela.each do |pdd|%>
+                      
+                        <%end%>
+                        
+                        
+                       
+                      </tr>
+               
+                </tbody>
+                
+                </table>
+ 
+                
+                
+
+        </div>
+          <div class="panel-footer">
+          <button type="button" class="btn btn-default" onclick="cont()"; aria-label="Left Align">
+            <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+          </button>
+      </div>
+      
+                
+     </div>
+    
+
+    </panel>
+    </div>
+</center>
+<br>
+<br>
+<br>
+<br>
+

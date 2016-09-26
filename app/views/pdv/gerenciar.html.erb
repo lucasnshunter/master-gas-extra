@@ -1,0 +1,131 @@
+
+
+<style>
+    <%= render 'partials/css/pdv/check_box'%>
+</style>
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading">Gerenicar PDV </div>
+   <%@tela.each do |item|%>
+              <%@check_agua="checked" if  item['sell_agua']=="on" %>
+              <%@check_gas="checked" if  item['sell_gas']=="on" %>
+              <%@check_cell="checked" if  item['sell_cell']=="on" %>
+
+    <form class="form-inline" action="gerenciado" method="post">
+      <div class="panel-body">
+         <table class="table table-striped">
+             <thead>
+                 <tr>
+                  <td>Saldo Água</td>
+                  <td>Saldo Gás</td>
+                  <td>Porcentagem Sobre Água</td>
+                  <td>Porcentagem sobre Gás</td>
+                  <td>Limite de saldo Água</td>
+                  <td>Limite de saldo Gás</td>
+                </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                  <td><%=item['saldo_agua']%>
+                   
+                  </td>
+                  <td><%=item['saldo_gas']%>
+                  
+                 </td>
+                 <td>
+                      <div class="form-group">
+                
+                        <input type="number" name="percent_agua" class="form-control" value=<%=item['percent_agua']%> >
+                    </div>
+                  </td>
+                  <td>
+                      <div class="form-group">
+                
+                        <input type="number" name="percent_gas" class="form-control" value=<%=item['percent_gas']%> >
+                    </div>
+                  </td>
+                  <td>
+                      <div class="form-group">
+                
+                        <input type="number" name="limit_saldo_agua" class="form-control" value=<%=item['limit_saldo_agua']%> >
+                    </div>
+                  </td>
+                  <td>
+                      <div class="form-group">
+                
+                        <input type="number" name="limit_saldo_gas" class="form-control" value=<%=item['limit_saldo_gas']%> >
+                    </div>
+                  </td>
+                </tr>
+             </tbody>
+             
+         </table>
+         
+         
+          
+         
+         
+        <center>
+             <div class="[ form-group ]">
+                <input type="checkbox" name="sell_gas" id="gas" autocomplete="off" <%=@check_gas%>  value=<%=item['sell_gas']%> on >
+                <div class="[ btn-group ]">
+                    <label for="gas" class="[ btn btn-primary ]">
+                        <span class="[ glyphicon glyphicon-ok ]"></span>
+                        <span> </span>
+                    </label>
+                    <label for="gas" class="[ btn btn-default active ]">
+                        Vender Gás
+                    </label>
+                </div>
+            </div>
+            <div class="[ form-group ]">
+            <input type="checkbox" name="sell_agua" id="agua" autocomplete="off" <%=@check_agua%> value=<%=item['sell_agua']%> on >
+            <div class="[ btn-group ]">
+                <label for="agua" class="[ btn btn-primary ]">
+                    <span class="[ glyphicon glyphicon-ok ]"></span>
+                    <span> </span>
+                </label>
+                <label for="agua" class="[ btn btn-default active ]">
+                   Vender Água
+                </label>
+            </div>
+        </div>
+        <div class="[ form-group ]">
+            <input type="checkbox" name="sell_cell" id="cell" autocomplete="off" <%=@check_cell%>  value=<%=item['sell_ceell']%> on >
+            <div class="[ btn-group ]">
+                <label for="cell" class="[ btn btn-primary ]">
+                    <span class="[ glyphicon glyphicon-ok ]"></span>
+                    <span> </span>
+                </label>
+                <label for="cell" class="[ btn btn-default active ]">
+                   Vender Credito de celular
+                </label>
+            </div>
+        </div>
+      </div>
+       <div class="form-group">
+                
+               <input type="hidden" name="pdv_id" class="form-control" value=<%=item['_id']%> >
+       </div>
+        <div class="form-group">
+                
+               <input type="hidden" name="phonepos" class="form-control" value=<%=item['phonepos']%> >
+       </div>
+       <div class="form-group">
+                
+               <input type="hidden" name="status" class="form-control" value=<%=item['STATUS']%> >
+       </div>
+        </center>
+      <div class="panel-footer">
+          <center>
+              <button type="submit" class="btn btn-primary">Atualizar</button>
+          </center>
+      </div>
+          
+    </form>
+   <%end%>
+</div>
+
+
+

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+  get 'home/home'
+
   get 'master/dashboard'
+  
+  post 'master/dashboard'
 
   get 'master/pagina_teste'
 
@@ -15,13 +19,26 @@ Rails.application.routes.draw do
   
   post 'representante/show'
   
+  get 'representante/show'
+  
   post 'representante/show_representantes_por_ddd'
+  
+  get 'representante/show_representantes_por_ddd'
   
   post 'representante/show_representante'
   
+  get 'representante/show_representante'
+   
   post 'representante/excluir'
   
-   post 'representante/exibir'
+  get 'representante/excluir'
+  
+  post 'representante/exibir'
+  
+  get 'representante/exibir'
+  ##################################
+  #Rotas relacionadas a crud do PDD#
+  ##################################
   
   get 'pdd/home'
 
@@ -43,19 +60,47 @@ Rails.application.routes.draw do
   
   post 'pdd/listar_por_representante'
   
+  post 'pdd/listar_por_representante'
+  
+  get 'pdd/listar_por_representante'
+  
   post 'pdd/listar_por_regiao'
+  
+  get 'pdd/listar_por_regiao'
   
   post 'pdd/show_por_representante'
   
+  get 'pdd/show_por_representante'
+  
   post 'pdd/show_por_regiao'
   
+  get 'pdd/show_por_regiao'
+  
   post 'pdd/exibir'
+  
+  get 'pdd/exibir'
   
   post 'pdd/excluir'
   
   post 'pdd/atualizar'
   
   post 'pdd/atualizado'
+  
+  post 'pdd/relatorios_unitarios'
+  
+  post 'pdd/regime_pesquisa'
+  
+  post 'pdd/relatorio_detalhado'
+  ##########################################
+  #Rotas relacionadas a configuração do PDD#
+  ##########################################
+  post 'pdd/gerenciar'
+  
+  post 'pdd/gerenciado'
+  
+  ##################################
+  #Rotas relacionadas a crud do PDv#
+  ##################################
   
   get 'pdv/home'
 
@@ -89,53 +134,39 @@ Rails.application.routes.draw do
   
   post 'pdv/listar_por_regiao'
   
+  get 'pdv/listar_por_regiao'
+  
   post 'pdv/show_por_representante'
   
   post 'pdv/show_por_regiao'
+ 
+  ##########################################
+  #Rotas relacionadas a configuração do PDV#
+  ##########################################
+  post 'pdv/gerenciar'
+  
+   post 'pdv/gerenciado'
   
   #############################################
   #Rotas relacionadas as paginas de relatorios#
   #############################################
   get 'pdv/relatorios'
   
-  post 'pdv/relatorio_unitario'
+  post 'pdv/relatorio_detalhado'
+  
+   post 'pdv/relatorio_global'
+  
   
   post 'pdv/relatorios_unitarios'
   
   post 'pdv/relatorio_unitario_celular'
-  
-  post 'pdv/relatorio_unitario_celular_resumido'
-  
-  post 'pdv/relatorio_unitario_celular_detalhado'
-  
+ 
   post 'pdv/regime_pesquisa'
-  #####################################################
-  #Rotas relacionadas as paginas de relatorios de agua#
-  #####################################################
-  get 'pdv/relatorios_gas'
   
-  get 'pdv/relatorios_detalhado_vendas_gas'
+  post 'pdv/regime_pesquisa_global'
   
-  get 'pdv/relatorios_resumido_vendas_gas'
   
-  #####################################################
-  #Rotas relacionadas as paginas de relatorios de agua#
-  #####################################################
-  get 'pdv/relatorios_agua'
-  
-  get 'pdv/relatorios_detalhado_vendas_agua'
-  
-  get 'pdv/relatorios_resumido_vendas_agua'
-  
-  #############################################################
-  #Rotas relacionadas as paginas de relatorios de venda de gas#
-  #############################################################
-  get 'pdv/relatorios_credito_cell'
-  
-  get 'pdv/relatorios_detalhado_vendas_credito_cell'
-  
-  get 'pdv/relatorios_resumido_vendas_credito_cell'
-  
+ 
   get 'server/pagina_teste'
   
 

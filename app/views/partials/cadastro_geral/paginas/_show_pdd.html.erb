@@ -1,0 +1,129 @@
+pdd
+<br>
+<%=@tela%>
+<br>
+<center>
+    <div class="panel panel-primary">
+         <div class="panel-heading">
+            <h3 class="panel-title">Usuario Criado</h3>
+         </div>
+         <div class="panel-body">
+            <table class="table table-striped">
+                <thead>
+                     <tr>
+                        <td>Nome Fantasia</td>
+                        <td>Responsavel</td>
+                        <td>CPF/CNPJ</td>
+                        <td>Classe</td>
+                        <td>Representante</td>
+                     </tr>
+                </thead>
+                <%@tela.each do |pdd|%>
+                <tbody>
+                     <tr>
+                        <td><%=pdd['nomefantasia']%></td>
+                        <td><%=pdd['uname']%></td>
+                        <td><%=pdd['CPF']%></td>
+                        <td><%=pdd['class']%></td>
+                        <td><%=pdd['REPRES']%></td>
+                <%end%>
+                </body>  
+                </table>
+                <table class="table table-hover">
+                <thead>
+                     <tr>
+                        <td>DDD</td>
+                        <td>Telefone</td>
+                        <td>Email</td>
+                        <td>CEP</td>
+                        <td>Endereço</td>
+                     </tr>
+                </thead>
+                <%@tela.each do |pdd|%>
+                <tbody>
+                     <tr>
+                        <td><%=pdd['defaultddd']%></td>
+                        <td><%=pdd['phone']%></td>
+                        <td><%=pdd['email']%></td>
+                        <td><%=pdd['CEP']%></td>
+                        <td><%=pdd['address']%></td>
+                 </body>
+                <%end%>
+                  
+                </table>
+                
+                <table class="table table-hover">
+                <thead>
+                     <tr>
+                      
+                        <td>Logradouro</td>
+                        <td>Bairro</td>
+                        <td>Área</td>
+                        <td>Cidade</td>
+                        <td>Estado</td>
+                     </tr>
+                </thead>
+
+                <%@tela.each do |pdd|%>
+                <tbody>
+                     <tr>
+                       
+                        <td><%=pdd['logradouro']%></td>
+                        <td><%=pdd['bairro']%></td>
+                        <td><%=pdd['area']%></td>
+                        <td><%=pdd['city']%></td>
+                        <td><%=pdd['UF']%></td>
+                </body>
+                <%@id=pdd['_id']%>
+                <%@pdd_=pdd['PDD']%>
+                <%end%>
+                  
+                <table class="table table-hover">
+                
+                <thead>
+                     <tr>
+                       
+                       
+                        <td>
+                           <%= render 'partials/cadastro_geral/actionbuttons/atualizar'%>
+                        </td>
+                    
+                        <td>
+                            <%= render 'partials/cadastro_geral/actionbuttons/excluir'%>
+                        </td>
+                        <td>
+                            <%= render 'partials/cadastro_geral/actionbuttons/relatorios_pdd'%>
+                        </td>
+                        
+                        <td>
+                            <%= render 'partials/cadastro_geral/actionbuttons/gerenciar'%>
+                        </td>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                     
+                    <tr>
+                       
+                        <td>
+                        </td>
+                        <td>
+                        </td>
+                         <td>
+                        </td>
+                        <td>
+                        </td>
+                        
+                    </tr>
+                
+                </tbody>
+                 
+                 
+                
+                </table>
+
+        </div>
+     </div>
+
+    </panel>
+</center>

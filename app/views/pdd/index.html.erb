@@ -3,20 +3,73 @@
   <div class="panel-body">
       <center>
           
-             <%= link_to pdd_listar_por_regiao_path ,class:"btn btn-info" do %>
-              <i class="fa fa-globe" aria-hidden="true">
-                  Região
-              </i>
-             <% end %>
-             
-             <%= link_to pdd_listar_por_representante_path ,class:"btn btn-info" do %>
-              <i class="fa fa-suitcase" aria-hidden="true">
-                  Representante
-              </i>
-             <% end %>
+           <!-- Modal de pesquisa por DDD -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#ddd">
+                          <i class="fa fa-globe" aria-hidden="true">
+                              DDD
+                          </i>
+            </button>
+            
+            <!-- Modal ddd -->
+            <div class="modal fade" id="ddd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Pesquisa de PDDs por DDD</h4>
+                  </div>
+                  <div class="modal-body">
+                   <div class="panel-body">
+                   <form name="pdd" action="show_por_regiao" method="post">
+            
+                        <%= render 'partials/cadastro_geral/inputs/ddd'%>
+            
+                        <button type="submit" class="btn btn-primary">Subimeter</button>
+                    </form>
+                </div>
+              
+              
+                  </div>
+                  <div class="modal-footer">
+                   
+                    
+              
+              
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          <!-- Modal de pesquisa por representante -->
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+           <i class="fa fa-suitcase" aria-hidden="true">
+                            Representante
+                        </i>
+          </button>
+          
+          <!-- Modal do  representante -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Pesquisa de PDDs por representante</h4>
+                </div>
+                <div class="modal-body">
+                  Implementar meios de pesquisa
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">fechar</button>
+                  <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                </div>
+              </div>
+            </div>
+          </div>
+           
           
       </center>
     
   </div>
   <div class="panel-footer"></div>
 </div>
+

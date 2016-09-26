@@ -1,1 +1,9 @@
-<button type="button" class="btn btn-primary">Mes atual</button>
+<div class="col-md-2">
+<form action="relatorio_detalhado" method="post">
+        <input type="hidden" name="tipo_relatorio" value=<%=@tipo_relatorio%>>
+        <input type="hidden" name="pdv" value=<%=@pdv_%>>
+         <input type="hidden" name="pdd" value=<%=@pdd_%>>
+        <input type="hidden" name="entrada" value=2>
+        <button type="submit" class="btn btn-primary">Mês atual</button>
+</form>
+</div>

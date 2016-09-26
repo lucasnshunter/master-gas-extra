@@ -1,4 +1,7 @@
 
+
+
+
 <%@tela.each do |pdv|%>
 
 
@@ -26,22 +29,7 @@
                 <input type="number" name="cpf_cnpj" value="<%=pdv['CPF']%>" class="form-control"  >
             </div>
             <!--dados do negocio 3-->
-            
- <div class="form-group">
-                <label for="exampleInputPassword1">Seguimento</label>
-                <input type="text" name="seguimento" class="form-control" value="<%=pdv['seguimento']%>" >
-            </div>
 
-<div class="form-group">
-                <label for="exampleInputPassword1">Saldo ($)</label>
-                <input type="number" name="saldo" class="form-control" value="<%=pdv['saldo']%>" >
-            </div>
-
-<div class="form-group">
-                <label for="exampleInputPassword1">Comição (%)</label>
-                <input type="number" name="comicao" class="form-control" value="<%=pdv['comicao']%>" >
-            </div>
-            <!--Dados de contato 3-->
            
 <div class="form-group">
                 <label for="exampleInputPassword1">DDD</label>
@@ -82,16 +70,17 @@
             </div>
 
  
-             <div class="form-group">
-                <label for="exampleInputPassword1">Área</label>
-                <input type="text" name="area" class="form-control" value="<%=pdv['area']%>">
-            </div>
+            
 
  <div class="form-group">
                 <label for="exampleInputPassword1">Cidade</label>
                 <input type="text" name="adcit" class="form-control" value="<%=pdv['city']%>" >
             </div>
- <%= render 'partials/cadastro_geral/inputs/estado'%>
+ <div class="form-group">
+             <label for="exampleInputPassword1">Estado</label>
+             <input name="uf" type="text" id="uf"  class="form-control" value="<%=pdv['UF']%>"/>
+             </div>
+             
            
             <button type="submit" class="btn btn-primary">Subimeter</button>
         </form>

@@ -1,27 +1,2 @@
-<div class="panel panel-primary">
-    <div class="panel-heading"><center>Escolha o regime da pesquisa</center></div>
-  <div class="panel-body">
-      <center>
-          
-             <%= link_to pdv_relatorios_gas_path ,class:"btn btn-info" do %>
-              <i class="fa fa-globe" aria-hidden="true">
-                   Relatorios de venda de Gás
-              </i>
-             <% end %>
-             
-             <%= link_to pdv_relatorios_agua_path ,class:"btn btn-info" do %>
-              <i class="fa fa-suitcase" aria-hidden="true">
-                relatorios de venda de Agua
-              </i>
-             <% end %>
-              <%= link_to pdv_relatorios_credito_cell_path ,class:"btn btn-info" do %>
-              <i class="fa fa-suitcase" aria-hidden="true">
-                 relatorio de venda de Credito de celular
-              </i>
-             <% end %>
-          
-      </center>
-    
-  </div>
-  <div class="panel-footer"></div>
-</div>
+
+<%= render 'partials/cadastro_geral/paginas/relatorios_produtos_global'%>

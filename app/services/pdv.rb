@@ -78,31 +78,50 @@ class Pdv
         resp
     #função ok    
     end
+    #relatorios unitarios
+    def solicitar_lista_vendas_cell_pdv pdv,start_date,end_date
+       servidor=Server.new
+       resp=servidor.solicitar_lista_vendas_cell_pdv pdv,start_date,end_date
+       resp
+      
+    end
+    def solicitar_lista_vendas_agua_pdv pdv,start_date,end_date
+       servidor=Server.new
+       resp=servidor.solicitar_lista_vendas_agua_pdv pdv,start_date,end_date
+       resp
+      
+    end
+    def solicitar_lista_vendas_gas_pdv pdv,start_date,end_date
+       servidor=Server.new
+       resp=servidor.solicitar_lista_vendas_gas_pdv pdv,start_date,end_date
+       resp
+      
+    end
+    #relatorios globais
+    def solicitar_lista_vendas_cell_pdv_global start_date,end_date
+       servidor=Server.new
+       resp=servidor.solicitar_lista_vendas_cell_pdv_global start_date,end_date
+       resp
+      
+    end
+    def solicitar_lista_vendas_agua_pdv_global start_date,end_date
+       servidor=Server.new
+       resp=servidor.solicitar_lista_vendas_agua_pdv_global start_date,end_date
+       resp
+      
+    end
+    def solicitar_lista_vendas_gas_pdv_global start_date,end_date
+       servidor=Server.new
+       resp=servidor.solicitar_lista_vendas_gas_pdv_global start_date,end_date
+       resp
+      
+    end
+    #configuração do pdv
+    def configurar_pdv pdv_id,limit_saldo_agua,limit_saldo_gas,percentagua,percentgas,sellagua,sellgas,sellcell,phonepos,status
+        servidor=Server.new
+        resp=servidor.configurar_pdv pdv_id,limit_saldo_agua,limit_saldo_gas,percentagua,percentgas,sellagua,sellgas,sellcell,phonepos,status
+        resp
+        
+    end
    
-    def solicitar_lista_vendas_gas_pdv pdv_id
-        
-        servidor=Server.new
-        resp=servidor.solicitar_lista_vendas_gas_pdv pdv_id
-        resp
-    end
-    def solicitar_lista_vendas_gas_pdvs 
-        
-        servidor=Server.new
-        resp=servidor.solicitar_lista_vendas_gas_pdvs 
-        resp
-    end
-     
-    def solicitar_lista_vendas_cell_pdv pdv_id
-        
-        servidor=Server.new
-        resp=servidor.solicitar_lista_vendas_cell_pdv pdv_id
-        resp
-    end
-    
-    def solicitar_lista_vendas_cell_pdvs 
-        
-        servidor=Server.new
-        resp=servidor.solicitar_lista_vendas_cell_pdvs 
-        resp
-    end
 end

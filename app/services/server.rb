@@ -47,24 +47,21 @@ class Server
         uri=URI( 'http://162.243.215.24/PDV/PDVADMIN_register_admin')
         
         resp = Net::HTTP.post_form(uri,
-        'pdv'=>pdv.pdv_id,
-        'representative'=>pdv.pdv_representative,
-        'nomefantasia'=>pdv.pdv_fantname,
-        'usrcpf'=>pdv.pdv_cpf_cnpj,
-        'usrname'=>pdv.pdv_name,
-        'usrseguimento'=>pdv.pdv_seguimento,
-        'usrsaldo'=>pdv.pdv_saldo,
-        'usrcomicao'=>pdv.pdv_comicao,
-         'usrddd'=>pdv.pdv_ddd,
-        'usrmail'=>pdv.pdv_email,
-        'usrphone'=>pdv.pdv_phone,
-        'usraddr'=>pdv.pdv_addr,
-        'usrarea'=>pdv.pdv_area, 
-        'usrbairro'=>pdv.pdv_bairro,
-        'usrlogr'=>pdv.pdv_logr,
-        'usradcit'=>pdv.pdv_ad_city,
-        'usraduf'=>pdv.pdv_ad_uf,
-        'usradcep'=>pdv.pdv_ad_cep)
+        'pdv'=>pdv.pdv_id,#ok
+        'representative'=>pdv.pdv_representative,#ok
+        'nomefantasia'=>pdv.pdv_fantname,#ok
+        'usrcpf'=>pdv.pdv_cpf_cnpj,#ok
+        'usrname'=>pdv.pdv_name,#nome
+         'usrddd'=>pdv.pdv_ddd,#ok
+        'usrmail'=>pdv.pdv_email,#ok
+        'usrphone'=>pdv.pdv_phone,#ok
+        'usraddr'=>pdv.pdv_addr,#ok
+        'usrarea'=>pdv.pdv_area, #ok
+        'usrbairro'=>pdv.pdv_bairro,#ok
+        'usrlogr'=>pdv.pdv_logr,#ok
+        'usradcit'=>pdv.pdv_ad_city,#ok
+        'usraduf'=>pdv.pdv_ad_uf,#ok
+        'usradcep'=>pdv.pdv_ad_cep)#ok
         @record=JSON.parse(resp.body)
         @record
         #função ok
@@ -143,63 +140,60 @@ class Server
         uri=URI( 'http://162.243.215.24/PDV/PDVADMIN_register_admin')
         
         resp = Net::HTTP.post_form(uri,
-        'update'=>'true',
-        'usrid'=>pdv.pdv_id,
-        'representative'=>pdv.pdv_representative,
-        'nomefantasia'=>pdv.pdv_fantname,
-        'usrcpf'=>pdv.pdv_cpf_cnpj,
-        'usrname'=>pdv.pdv_name,
-        'usrseguimento'=>pdv.pdv_seguimento,
-        'usrsaldo'=>pdv.pdv_saldo,
-        'usrcomicao'=>pdv.pdv_comicao,
-         'usrddd'=>pdv.pdv_ddd,
-        'usrmail'=>pdv.pdv_email,
-        'usrphone'=>pdv.pdv_phone,
-        'usraddr'=>pdv.pdv_addr,
-        'usrarea'=>pdv.pdv_area, 
-        'usrbairro'=>pdv.pdv_bairro,
-        'usrlogr'=>pdv.pdv_logr,
-        'usradcit'=>pdv.pdv_ad_city,
-        'usraduf'=>pdv.pdv_ad_uf,
-        'usradcep'=>pdv.pdv_ad_cep)
+        'usrid'=>pdv.pdv_id,#
+        'nomefantasia'=>pdv.pdv_fantname,#ok
+        'usrcpf'=>pdv.pdv_cpf_cnpj,#ok
+        'usrname'=>pdv.pdv_name,#ok
+         'usrddd'=>pdv.pdv_ddd,#ok
+        'usrmail'=>pdv.pdv_email,#ok
+        'usrphone'=>pdv.pdv_phone,#ok
+        'usraddr'=>pdv.pdv_addr,#ok
+        'usrarea'=>pdv.pdv_area, #ok
+        'usrbairro'=>pdv.pdv_bairro,#ok
+        'usrlogr'=>pdv.pdv_logr,#ok
+        'usradcit'=>pdv.pdv_ad_city,#ok
+        'usraduf'=>pdv.pdv_ad_uf,#ok
+        'usradcep'=>pdv.pdv_ad_cep,#ok
+         'update'=>'true')
         @record=JSON.parse(resp.body)
         @record
         
         #função ok
     end
+    
+    #####################################################
+    ######Metodos relacionados a configuração  de PDVs####
+    #####################################################
+    def configurar_pdv pdv_id,limit_saldo_agua,limit_saldo_gas,percent_agua,percent_gas,sell_agua,sell_gas,sell_cell,phonepos,status
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+        uri=URI( 'http://162.243.215.24/PDV/PDV_config_admin')
+        
+        resp = Net::HTTP.post_form(uri,
+        'usrid'=>pdv_id,
+        'limitsaldoagua'=>limit_saldo_agua,
+        'limitsaldogas'=>limit_saldo_gas,
+        'percentagua'=>percent_agua,
+        'percentgas'=>percent_gas,
+        'sellagua'=>sell_agua,
+        'sellgas'=>sell_gas,
+        'sellcell'=>sell_cell,
+        'phonepos'=>phonepos,
+        'status'=>status,
+        'token'=>"mentira")
+        @record=JSON.parse(resp.body)
+        @record
+        #função ok
+        
+    end
+    
     #####################################################
     ######Metodos relacionados aos relatorios de PDVs####
     #####################################################
-    def solicitar_lista_vendas_gas_pdv pdv_id
-        require "rubygems"
-        require 'json'
-        require "net/http"
-        require 'yaml'
-        
-        uri=URI( 'http://162.243.215.24/PDV/PDV_get_gas_sales')
-        
-        resp = Net::HTTP.post_form(uri,'pdv_id'=>pdv_id,'token'=>"mentira")
-        @record=JSON.parse(resp.body)
-        @record
-        #função ok
-        #,'pdv_id'=>"",'userphone'=>"",'starttime'=>"",'endtime'=>""
-    end
-    def solicitar_lista_vendas_gas_pdvs
-        require "rubygems"
-        require 'json'
-        require "net/http"
-        require 'yaml'
-        
-        uri=URI( 'http://162.243.215.24/PDV/PDV_get_gas_sales')
-        
-        resp = Net::HTTP.post_form(uri,'token'=>"mentira")
-        @record=JSON.parse(resp.body)
-        @record
-        #função ok
-        #,'pdv_id'=>"",'userphone'=>"",'starttime'=>"",'endtime'=>""
-    end
-    
-    def solicitar_lista_vendas_cell_pdv pdv_id
+    def solicitar_lista_vendas_cell_pdv pdv,start_time,end_time
         require "rubygems"
         require 'json'
         require "net/http"
@@ -207,14 +201,46 @@ class Server
         
         uri=URI( 'http://162.243.215.24/PDV/PDV_get_cell_sales')
         
-        resp = Net::HTTP.post_form(uri,'pdv_id'=>pdv_id,'token'=>"mentira")
+        resp = Net::HTTP.post_form(uri,'pdvid'=>pdv,'starttime'=>start_time,'endtime'=>end_time,'token'=>"mentira")
         @record=JSON.parse(resp.body)
         @record
         #função ok
-        #,'pdv_id'=>"",'userphone'=>"",'starttime'=>"",'endtime'=>""
+        
     end
     
-    def solicitar_lista_vendas_cell_pdvs 
+    def solicitar_lista_vendas_gas_pdv pdv,start_time,end_time
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+        uri=URI( 'http://162.243.215.24/PDV/PDV_get_gas_sales')
+        
+        resp = Net::HTTP.post_form(uri,'pdvid'=>pdv,'starttime'=>start_time,'endtime'=>end_time,'token'=>"mentira")
+        @record=JSON.parse(resp.body)
+        @record
+        #função ok
+        
+    end
+    
+    
+    def solicitar_lista_vendas_agua_pdv pdv,start_time,end_time
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+        uri=URI( 'http://162.243.215.24/PDV/PDV_get_water_sales')
+        
+        resp = Net::HTTP.post_form(uri,'pdvid'=>pdv,'starttime'=>start_time,'endtime'=>end_time,'token'=>"mentira")
+        @record=JSON.parse(resp.body)
+        @record
+        #função ok
+        
+    end
+    
+    
+    def solicitar_lista_vendas_cell_pdv_global start_time,end_time
         require "rubygems"
         require 'json'
         require "net/http"
@@ -222,12 +248,45 @@ class Server
         
         uri=URI( 'http://162.243.215.24/PDV/PDV_get_cell_sales')
         
-        resp = Net::HTTP.post_form(uri,'token'=>"mentira")
+        resp = Net::HTTP.post_form(uri,'starttime'=>start_time,'endtime'=>end_time,'token'=>"mentira")
         @record=JSON.parse(resp.body)
         @record
         #função ok
-        #,'pdv_id'=>"",'userphone'=>"",'starttime'=>"",'endtime'=>""
+        
     end
+    
+    def solicitar_lista_vendas_gas_pdv_global start_time,end_time
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+        uri=URI( 'http://162.243.215.24/PDV/PDV_get_gas_sales')
+        
+        resp = Net::HTTP.post_form(uri,'starttime'=>start_time,'endtime'=>end_time,'token'=>"mentira")
+        @record=JSON.parse(resp.body)
+        @record
+        #função ok
+        
+    end
+    
+    
+    def solicitar_lista_vendas_agua_pdv_global start_time,end_time
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+        uri=URI( 'http://162.243.215.24/PDV/PDV_get_water_sales')
+        
+        resp = Net::HTTP.post_form(uri,'starttime'=>start_time,'endtime'=>end_time,'token'=>"mentira")
+        @record=JSON.parse(resp.body)
+        @record
+        #função ok
+        
+    end
+    
+    
     #####################################################
     ######Metodos relacionados ao trabalho com PDDs######
     #####################################################
@@ -272,7 +331,10 @@ class Server
         'usrlogr'=>pdd.pdd_logr,
         'usradcit'=>pdd.pdd_ad_city,
         'usraduf'=>pdd.pdd_ad_uf,
-        'usradcep'=>pdd.pdd_ad_cep)
+        'usradcep'=>pdd.pdd_ad_cep,
+        'usrlat'=>pdd.pdd_usr_lat,
+        'usrlon'=>pdd.pdd_usr_lon
+        )
         @record=JSON.parse(resp.body)
         @record
         #metodo ok
@@ -310,7 +372,7 @@ class Server
         #função funciona
     end
     
-     def solicitar_dados_pdd_adm_cpf pdd_cpf_cnpj
+    def solicitar_dados_pdd_adm_cpf pdd_cpf_cnpj
         
         require "rubygems"
         require 'json'
@@ -351,28 +413,78 @@ class Server
         uri=URI( 'http://162.243.215.24/PDV/PDDADMIN_register_PDDadmin')
         
         resp = Net::HTTP.post_form(uri,
-        'userid'=>pdd.pdd_id,
+        'usrid'=>pdd.pdd_id,
         'representative'=>pdd.pdd_representative,
         'nomefantasia'=>pdd.pdd_fantname,
         'usrcpf'=>pdd.pdd_cpf_cnpj,
         'usrname'=>pdd.pdd_name,
-        'usrsaldo'=>pdd.pdd_saldo,
-        'usrcusto'=>pdd.pdd_custo,
          'usrddd'=>pdd.pdd_ddd,
         'usrmail'=>pdd.pdd_email,
         'usrphone'=>pdd.pdd_phone,
         'usraddr'=>pdd.pdd_addr,
-        'usrarea'=>pdd.pdd_area, 
         'usrbairro'=>pdd.pdd_bairro,
         'usrlogr'=>pdd.pdd_logr,
         'usradcit'=>pdd.pdd_ad_city,
         'usraduf'=>pdd.pdd_ad_uf,
-        'usradcep'=>pdd.pdd_ad_cep)
+        'usradcep'=>pdd.pdd_ad_cep,
+        'usrlat'=>pdd.pdd_usr_lat,
+        'usrlon'=>pdd.pdd_usr_lon,
+        
+        'update'=>'true')
         @record=JSON.parse(resp.body)
         @record
         #metodo ok
         #função ok
     end
+    
+    #####################################################
+    ######Metodos relacionados a configuração  de PDDs####
+    #####################################################
+    def configurar_pdd pdd_id,credito_gas,credito_agua,custo_gas,custo_agua,sell_agua,sell_gas,phonepos,status
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+        uri=URI( 'http://162.243.215.24/PDV/PDD_config_admin')
+        
+        resp = Net::HTTP.post_form(uri,
+        'usrid'=>pdd_id,
+        'watercost'=>custo_agua,
+        'gascost'=>custo_gas,
+        'gascredit'=>credito_gas,
+        'watercredit'=>credito_agua,
+        'sellagua'=>sell_agua,
+        'sellgas'=>sell_gas,
+        'phonepos'=>phonepos,
+        'status'=>status,
+        'token'=>"mentira")
+        @record=JSON.parse(resp.body)
+        @record
+        #função ok
+        
+    end
+    
+    
+    #####################################################
+    ######Metodos relacionados a relatorios  de PDDs####
+    #####################################################
+    def solicitar_lista_entregas_pdd pdd,kind,start_time,end_time
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+       
+        uri=URI( 'http://162.243.215.24/PDV/PDD_list_deliveries')
+        
+        resp = Net::HTTP.post_form(uri,'pddid'=>pdd,'kind'=>kind,'startime'=>start_time,'endtime'=>end_time,'token'=>"mentira")
+        @record=JSON.parse(resp.body)
+        @record
+        #função ok
+        
+    end
+    
     
     ###############################################################
     ######Metodos relacionados ao trabalho com representantes######
@@ -457,7 +569,7 @@ class Server
         'usraddr'=>representante.representante_addr,
         'usrarea'=>representante.representante_area,
         'usrbairro'=>representante.representante_bairro,
-        'usrlogr'=>representante.representante_logradouro,
+        'usrlogr'=>representante.representante_logr,
         'usradcit'=>representante.representante_ad_city,
         'usraduf'=>representante.representante_ad_uf,
         'usradcep'=>representante.representante_ad_cep)
@@ -481,7 +593,24 @@ class Server
         #metodo ok, porém falata codar view
     end
     
-   
     
+    ####################################
+    ######Metodos de geolocalização ####
+    ####################################
+    
+    def solicitar_geolocalizacao gps
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+        uri=URI('http://162.243.215.24/PHP/digitalCell/index.php/representatives/getlatlon')
+        
+        resp = Net::HTTP.post_form(uri,'endereco'=>gps.gps_endereco,'logradouro'=>gps.gps_logr,'bairro'=>gps.gps_bairro,'cidade'=>gps.gps_cidade,'estado'=>gps.gps_estado)
+        @record=JSON.parse(resp.body)
+        @record
+      
+
+    end
     
 end

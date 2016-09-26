@@ -1,0 +1,37 @@
+<div class="col-md-2">
+       
+<form action="relatorio_global" method="post">
+        <input type="hidden" name="tipo_relatorio" value=<%=@tipo_relatorio%>>
+        <input type="hidden" name="entrada" value=1>
+        <button type="submit" class="btn btn-primary">Mes anterior</button>
+</form>
+ </div>
+<div class="col-md-2">
+<form action="relatorio_global" method="post">
+        <input type="hidden" name="tipo_relatorio" value=<%=@tipo_relatorio%>>
+        <input type="hidden" name="entrada" value=2>
+        <button type="submit" class="btn btn-primary">Mês atual</button>
+</form>
+ </div>
+<div class="col-md-3">
+<form action="relatorio_global" method="post">
+        <input type="hidden" name="tipo_relatorio" value=<%=@tipo_relatorio%>>
+        <input type="hidden" name="entrada" value=4>
+        <button type="submit" class="btn btn-primary">Ultimos três meses</button>
+</form>
+ </div>
+<div class="col-md-2">
+<form action="relatorio_global" method="post">
+        <input type="hidden" name="tipo_relatorio" value=<%=@tipo_relatorio%>>
+        <input type="hidden" name="entrada" value=3>
+        <button type="submit" class="btn btn-primary">Ultimos 30 dias</button>
+</form>
+ </div>
+<div class="col-md-2">
+<form action="relatorio_global" method="post">
+        <input type="hidden" name="tipo_relatorio" value=<%=@tipo_relatorio%>>
+        <input type="hidden" name="entrada" value=5>
+        <button type="submit" class="btn btn-primary">Ultimo ano</button>
+</form>
+ </div>
+ <br>
