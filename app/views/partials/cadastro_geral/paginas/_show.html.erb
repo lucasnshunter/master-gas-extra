@@ -1,3 +1,5 @@
+
+<br>
 <center>
     <div class="panel panel-primary">
          <div class="panel-heading">
@@ -71,6 +73,7 @@
                         <td><%=pdv['UF']%></td>
                 </body>
                 <%@id=pdv['_id']%>
+                <%@pdv_=pdv['PDV']%>
                 <%end%>
                   
                 <table class="table table-hover">
@@ -84,10 +87,10 @@
                         </td>
                     
                         <td>
-                            <%= render 'partials/cadastro_geral/actionbuttons/excluir'%>>
+                            <%= render 'partials/cadastro_geral/actionbuttons/excluir'%>
                         </td>
                         <td>
-                            <%= render 'partials/cadastro_geral/actionbuttons/relatorios'%>
+                            <%= render 'partials/cadastro_geral/actionbuttons/relatorios_pdv'%>
                         </td>
                         
                         <td>

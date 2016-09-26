@@ -1,24 +1,86 @@
 <div class="panel panel-default">
       <div class="panel-heading"><center><h1><%=@contexto_pagina%></h1></center></div>
           <div class="panel-body">
-               <form name="<%=@contexto_name%>" action="<%=@contexto_action%>" method="post">
+               <form  class="form-inline"  action="<%=@contexto_action%>" method="post">
                      <!--Dados de identificação 3-->
-                    <%= render 'partials/cadastro_geral/inputs/namefant'%>
-                    <%= render 'partials/cadastro_geral/inputs/cpf_cnpj'%>
-                    <%= render 'partials/cadastro_geral/inputs/name'%>
-                    <!--Dados de contato 3-->
-                    <%= render 'partials/cadastro_geral/inputs/ddd'%>
-                    <%= render 'partials/cadastro_geral/inputs/telefone'%>
-                    <%= render 'partials/cadastro_geral/inputs/email'%>
-                    <!--dados de localização 6-->
-                    <%= render 'partials/cadastro_geral/inputs/cep'%>
-                    <%= render 'partials/cadastro_geral/inputs/endereco'%>
-                    <%= render 'partials/cadastro_geral/inputs/bairro'%>
-                    <%= render 'partials/cadastro_geral/inputs/logr'%>
-                    <%= render 'partials/cadastro_geral/inputs/cidade'%>
-                    <%= render 'partials/cadastro_geral/inputs/estado'%>
+                   
                     
-                    <button type="submit" class="btn btn-primary">Subimeter</button>
+                    
+                    <!--Dados de contato 3-->
+                   
+                    
+                   
+                    <!--dados de localização 6-->
+                   
+                    
+                    
+                  
+                   
+                    
+                    
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                              <td >Nome Fantasia</td>
+                              <td >CPF/CNPJ</td>
+                              <td >Responsavel</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <td ><%= render 'partials/cadastro_geral/inputs/namefant'%></td>
+                              <td ><%= render 'partials/cadastro_geral/inputs/cpf_cnpj'%></td>
+                              <td ><%= render 'partials/cadastro_geral/inputs/name'%></td>
+                            </tr>
+                        </tbody>
+                        
+                         <thead>
+                            <tr>
+                              <td >DDD</td>
+                              <td >Telefone</td>
+                              <td >Email</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                              <td > <%= render 'partials/cadastro_geral/inputs/ddd'%></td>
+                              <td > <%= render 'partials/cadastro_geral/inputs/telefone'%></td>
+                              <td > <%= render 'partials/cadastro_geral/inputs/email'%></td>
+                            </tr>
+                        </tbody>
+                        
+                         <thead>
+                            <tr>
+                              <td >Cep</td>
+                              <td >Endereço</td>
+                              <td >Bairro</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <td > <%= render 'partials/cadastro_geral/inputs/cep'%></td>
+                              <td > <%= render 'partials/cadastro_geral/inputs/endereco'%></td>
+                              <td > <%= render 'partials/cadastro_geral/inputs/bairro'%></td>
+                            </tr>
+                        </tbody>
+                        
+                        <thead>
+                            <tr>
+                              <td >Logradouro</td>
+                              <td >Cidade</td>
+                              <td >Estado</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                              <td >   <%= render 'partials/cadastro_geral/inputs/logr'%></td>
+                              <td >  <%= render 'partials/cadastro_geral/inputs/cidade'%></td>
+                              <td > <%= render 'partials/cadastro_geral/inputs/estado'%></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="submit" class="btn btn-primary" name="sendit" id="sendit">Subimeter</button>
                 </form>
             </div>
 </div>

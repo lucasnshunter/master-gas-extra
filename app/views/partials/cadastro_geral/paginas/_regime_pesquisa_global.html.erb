@@ -1,0 +1,23 @@
+
+<div class="panel panel-primary">
+    <div class="panel-heading"><center>Escolha o regime da pesquisa</center></div>
+  <div class="panel-body">
+      <center>
+             <%= render 'partials/geral/pesquisa_data_geral'%>
+             
+             <br>
+             <div class="panel-body">
+                           <form  action="relatorio_global" method="post">
+                              
+                              <%= render 'partials/geral/input_data_inicio'%>
+                              <%= render 'partials/geral/input_data_fim'%>
+                              <input type="hidden" name="tipo_relatorio" value=<%=@tipo_relatorio%>>
+                              <input type="hidden" name="entrada" value=6>
+                              <button type="submit" class="btn btn-primary">Subimeter</button>
+                            </form>
+                      </div>
+      </center>
+    
+  </div>
+  <div class="panel-footer"></div>
+</div>

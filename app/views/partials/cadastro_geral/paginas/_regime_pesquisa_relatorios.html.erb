@@ -3,15 +3,24 @@
   <div class="panel-body">
       <center>
              <%= render 'partials/geral/mes_atual'%>
+             <%= render 'partials/geral/mes_anterior'%>
              <%= render 'partials/geral/trinta_dias'%>
              <%= render 'partials/geral/tres_meses'%>
              <%= render 'partials/geral/um_ano'%>
-             <%= render 'partials/geral/input_data_inicio'%>
-             <%= render 'partials/geral/input_data_fim'%>
-               
-             
-              
-          
+             <br>
+             <br>
+             <div class="panel-body">
+                           <form name="@classe" action="relatorio_detalhado" method="post">
+                              
+                              <%= render 'partials/geral/input_data_inicio'%>
+                              <%= render 'partials/geral/input_data_fim'%>
+                              <input type="hidden" name="tipo_relatorio" value=<%=@tipo_relatorio%>>
+                              <input type="hidden" name="pdv" value=<%=@pdv_%>>
+                              <input type="hidden" name="pdd" value=<%=@pdd_%>>
+                              <input type="hidden" name="entrada" value=6>
+                              <button type="submit" class="btn btn-primary">Subimeter</button>
+                            </form>
+                      </div>
       </center>
     
   </div>

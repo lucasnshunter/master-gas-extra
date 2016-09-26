@@ -1,28 +1,44 @@
-<%=@id%>
+
 <div class="panel panel-primary">
     <div class="panel-heading"><center>Escolha o regime da pesquisa</center></div>
-  <div class="panel-body">
+  <div class="panel-body ">
       <center>
-          
-              <form name="pdv" action="relatorios_unitarios" method="post">
-                   <input type="hidden" name="id" value=<%=@id%>>
-                    <br>
-                   <button type="submit" class="btn btn-warning">Relatorios  Gás<i class="fa fa-table" aria-hidden="true"></i></button>
-              </form>
-             
-             <form name="pdv" action="relatorios_unitarios" method="post">
-                   <input type="hidden" name="id" value=<%=@id%>>
-                    <br>
-                   <button type="submit" class="btn btn-warning">Relatorios de Água <i class="fa fa-table" aria-hidden="true"></i></button>
-              </form>
-              <form name="pdv" action="relatorio_unitario_celular" method="post">
-                   <input type="hidden" name="id" value=<%=@id%>>
-                    <br>
-                   <button type="submit" class="btn btn-warning">Relatorios de Credito de Celular <i class="fa fa-table" aria-hidden="true"></i></button>
-              </form>
-          
+        <div class="col-md-4">
+         <form  action="regime_pesquisa" method="post">
+                             <input type="hidden" name="pdv" value=<%=@pdv_%>>
+                              <input type="hidden" name="pdd" value=<%=@pdd_%>>
+                              <input type="hidden" name="tipo_relatorio" value="gas">
+                              <br>
+                             <button type="submit" class="btn btn-warning">Relatorios  Gás <i class="fa fa-fire" aria-hidden="true"></i></button>
+                        </form>
+        </div>
+        <div class="col-md-4">
+          <form  action="regime_pesquisa" method="post">
+                             <input type="hidden" name="pdv" value=<%=@pdv_%>>
+                              <input type="hidden" name="pdd" value=<%=@pdd_%>>
+                             <input type="hidden" name="tipo_relatorio" value="agua">
+                              <br>
+                             <button type="submit" class="btn btn-warning">Relatorios de Água <i class="fa fa-glass" aria-hidden="true"></i></button>
+                        </form>
+         
+        </div>
+        <div class="col-md-4">
+          <form  action="regime_pesquisa" method="post">
+                             <input type="hidden" name="pdv" value=<%=@pdv_%>>
+                              <input type="hidden" name="pdd" value=<%=@pdd_%>>
+                               <input type="hidden" name="tipo_relatorio" value="cell">
+                              <br>
+                             <button type="submit" class="btn btn-warning">Relatorios de Credito de Celular <i class="fa fa-mobile" aria-hidden="true"></i></button>
+                        </form>
+        </div>   
       </center>
     
   </div>
   <div class="panel-footer"></div>
 </div>
+
+
+
+
+
+

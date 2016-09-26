@@ -1,2 +1,14 @@
-<h1>Master#pagina_teste</h1>
-<p>Find me in app/views/master/pagina_teste.html.erb</p>
+
+<div class="panel panel-default">
+      <div class="panel-heading"><center><h1><%=@contexto_pagina%></h1></center></div>
+          <div class="panel-body">
+               <form name="master" action="dashboard" method="post">
+                  
+                  <%= render 'partials/geral/input_data_inicio'%>
+                  <%= render 'partials/geral/input_data_fim'%>
+
+                    
+                    <button type="submit" class="btn btn-primary">Subimeter</button>
+                </form>
+            </div>
+</div>

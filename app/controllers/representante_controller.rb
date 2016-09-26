@@ -46,13 +46,13 @@ class RepresentanteController < ApplicationController
      @representante.representante_email=params[:email]
      
      #endereço
-     @representante.representante_ad_cep=params[:adcep]
      @representante.representante_addr=params[:addr]
-     @representante.representante_bairro=params[:bairro]
+     @representante.representante_ad_city=params[:cidade]
+     @representante.representante_ad_uf=params[:uf]
+     @representante.representante_ad_cep=params[:cep]
      @representante.representante_area=params[:area]
-     @representante.representante_logradouro=params[:logr]
-     @representante.representante_ad_city=params[:adcit]
-     @representante.representante_ad_uf=params[:estado]
+     @representante.representante_bairro=params[:bairro]
+     @representante.representante_logr=params[:rua]
     
     
      @representante.criar_representante @representante

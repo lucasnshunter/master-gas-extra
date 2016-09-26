@@ -1,2 +1,94 @@
+<<<<<<< HEAD
 
 <%= render 'partials/cadastro_geral/paginas/atualizar'%>
+=======
+<%=@tela%>
+<br>
+<br>
+
+
+<div class="panel-body">
+       <form name="pdd" action="atualizado" method="post">
+           
+           
+<%@tela.each do |pdd|%>
+                
+                        
+          <div class="form-group">
+                <label for="exampleInputPassword1">Nome fantasia</label>
+                <input type="text" name="fantname" value="<%=pdd['nomefantasia']%>" class="form-control"  >
+            </div>
+                       
+                        <div class="form-group">
+                <label for="exampleInputPassword1">Nome</label>
+                <input type="text" name="name" value=" <%=pdd['uname']%>" class="form-control"  >
+            </div>
+                        
+                        <div class="form-group">
+                <label for="exampleInputPassword1"> CPF/CNPJ</label>
+                <input type="number" name="cpf_cnpj" value="<%=pdd['CPF']%>" class="form-control"  >
+            </div>
+             <div class="form-group">
+                <label for="exampleInputPassword1">id</label>
+                <input type="text" name="id" class="form-control" value="<%=pdd['_id']%>" >
+            </div>  
+                      
+                       
+             <div class="form-group">
+                <label for="exampleInputPassword1">DDD</label>
+                <input type="number" name="ddd" class="form-control" value="<%=pdd['defaultddd']%>" >
+            </div>    
+
+               
+           <div class="form-group">
+                <label for="exampleInputPassword1">Telefone</label>
+                <input type="number" name="phone" class="form-control" value="<%=pdd['phone']%>" >
+            </div>
+                       
+                        <div class="form-group">
+                <label for="exampleInputPassword1">Email</label>
+                <input type="text" name="email" class="form-control" value=" <%=pdd['email']%>" >
+            </div>
+                        
+                        
+             <div class="form-group">
+                <label for="exampleInputPassword1">CEP</label>
+                <input type="number" name="adcep" class="form-control" value="<%=pdd['CEP']%>" >
+            </div>
+                        
+             <div class="form-group">
+                <label for="exampleInputPassword1">Endereço</label>
+                <input type="text" name="addr" class="form-control" value="<%=pdd['address']%>" >
+            </div>
+                       
+            <div class="form-group">
+                <label for="exampleInputPassword1">Logradouro</label>
+                <input type="text" name="logr" class="form-control" value=" <%=pdd['logradouro']%>" >
+            </div>
+                        
+                         
+             <div class="form-group">
+                <label for="exampleInputPassword1">Bairro</label>
+                <input type="text" name="bairro" class="form-control" value="<%=pdd['bairro']%>">
+            </div>
+                         
+            
+                       
+                         <div class="form-group">
+                <label for="exampleInputPassword1">Cidade</label>
+                <input type="text" name="adcit" class="form-control" value=" <%=pdd['city']%>" >
+            </div>
+            
+       
+            <div class="form-group">
+             <label for="exampleInputPassword1">Estado</label>
+             <input name="uf" type="text" id="uf"  class="form-control" value="<%=pdd['UF']%>"/>
+            </div>
+ 
+             
+                       
+<%end%>
+            <button type="submit" class="btn btn-primary">Subimeter</button>
+        </form>
+    </div>
+>>>>>>> pesquisa_relatorios
