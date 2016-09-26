@@ -31,13 +31,13 @@ Rails.application.routes.draw do
    
   post 'representante/excluir'
   
-<<<<<<< HEAD
+
   post 'representante/atualizar'
   
   post 'representante/atualizado'
   
   post 'representante/exibir'
-=======
+
   get 'representante/excluir'
   
   post 'representante/exibir'
@@ -46,7 +46,7 @@ Rails.application.routes.draw do
   ##################################
   #Rotas relacionadas a crud do PDD#
   ##################################
->>>>>>> pesquisa_relatorios
+
   
   get 'pdd/home'
 
