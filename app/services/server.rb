@@ -485,6 +485,22 @@ class Server
         
     end
     
+    def solicitar_lista_entregas_pdd_global kind,start_time,end_time
+        require "rubygems"
+        require 'json'
+        require "net/http"
+        require 'yaml'
+        
+       
+        uri=URI( 'http://162.243.215.24/PDV/PDD_list_deliveries')
+        
+        resp = Net::HTTP.post_form(uri, 'kind'=>kind,'starttime'=>start_time,'endtime'=>end_time,'token'=>"mentira")
+        @record=JSON.parse(resp.body)
+        @record
+        #função ok
+        
+    end
+    
     
     ###############################################################
     ######Metodos relacionados ao trabalho com representantes######
@@ -525,11 +541,12 @@ class Server
         require "net/http"
         require 'yaml'
        
-         uri=URI('http://162.243.215.24/PDV/REPRES_list_repres')
+        uri=URI('http://162.243.215.24/PDV/REPRES_list_repres')
         
-        resp = Net::HTTP.post_form(uri ,'field'=>'_id','value'=>representante_id,'token'=>'mentira' )
+        resp = Net::HTTP.post_form(uri ,'field'=>'_id','value'=>representante_id,'token'=>'mentira' ,'funct'=>'exibir rep')
         @record=JSON.parse(resp.body)
         @record
+        
         #função ok
     end
     
@@ -589,7 +606,7 @@ class Server
         uri=URI('http://162.243.215.24/PDV/REPRES_register_repres')
         
         resp = Net::HTTP.post_form(uri,
-        'userid'=>representante.representante_id,
+        'usrid'=>representante.representante_id,
         'usrname'=>representante.representante_name,
         'usrcpf'=>representante.representante_cpf_cnpj,
         'nomefantasia'=>representante.representante_fantname,
@@ -602,7 +619,8 @@ class Server
         'usrlogr'=>representante.representante_logr,
         'usradcit'=>representante.representante_ad_city,
         'usraduf'=>representante.representante_ad_uf,
-        'usradcep'=>representante.representante_ad_cep)
+        'usradcep'=>representante.representante_ad_cep,
+        'update'=>true)
         @record=JSON.parse(resp.body)
         @record
         #função ok

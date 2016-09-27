@@ -99,6 +99,10 @@ Rails.application.routes.draw do
   post 'pdd/regime_pesquisa'
   
   post 'pdd/relatorio_detalhado'
+  
+  post 'pdd/regime_pesquisa_global'
+  
+  post 'pdd/relatorio_global'
   ##########################################
   #Rotas relacionadas a configuração do PDD#
   ##########################################

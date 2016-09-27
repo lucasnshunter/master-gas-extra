@@ -10,6 +10,7 @@ class Representante
     attr_accessor :representante_phone
     attr_accessor :representante_email
     #endereço
+    attr_accessor :representante_addr
     attr_accessor :representante_ad_city
     attr_accessor :representante_ad_uf
     attr_accessor :representante_ad_cep

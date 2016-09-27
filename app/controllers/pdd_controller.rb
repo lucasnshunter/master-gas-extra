@@ -166,7 +166,7 @@ class PddController < ApplicationController
   end
   
   def regime_pesquisa_global
-    @pdv=Pdv.new
+    @pdd=Pdd.new
     @tipo_relatorio=params[:tipo_relatorio]
     
   end
@@ -196,8 +196,7 @@ class PddController < ApplicationController
   end
   def relatorio_global
     @calendario=Calendario.new
-    @pdv=Pdv.new
-    @calendario=Calendario.new
+    @pdd=Pdd.new
     @data_inicio=params[:data_inicio]
     @data_fim=params[:data_fim]
     @tipo_relatorio=params[:tipo_relatorio]
@@ -209,10 +208,10 @@ class PddController < ApplicationController
     @parametros_relatorio=@calendario.ultimos_3_meses if @entrada==4
     @parametros_relatorio=@calendario.ultimo_ano if @entrada==5
     @parametros_relatorio=@calendario.data_livre @data_inicio,@data_fim if @entrada==6
-    @tela2=@parametros_relatorio
-    @tela=@pdv.solicitar_lista_vendas_cell_pdv_global @parametros_relatorio[0],@parametros_relatorio[1] if @tipo_relatorio=="cell"
-    @tela=@pdv.solicitar_lista_vendas_gas_pdv_global @parametros_relatorio[0],@parametros_relatorio[1] if @tipo_relatorio=="gas"
-    @tela=@pdv.solicitar_lista_vendas_agua_pdv_global @parametros_relatorio[0],@parametros_relatorio[1] if @tipo_relatorio=="agua"
+    @tipo_relatorio="WATER" if @tipo_relatorio=="agua"
+    @tipo_relatorio="GAS" if @tipo_relatorio=="gas"
+    @tela=@pdd.solicitar_lista_entregas_pdd_global @tipo_relatorio,@parametros_relatorio[0],@parametros_relatorio[1]
+    
     
   end
 end

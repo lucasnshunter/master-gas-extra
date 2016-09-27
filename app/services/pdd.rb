@@ -78,6 +78,13 @@ class Pdd
        resp
       
     end
+    
+    def solicitar_lista_entregas_pdd_global kind,start_date,end_date
+       servidor=Server.new
+       resp=servidor.solicitar_lista_entregas_pdd_global kind,start_date,end_date
+       resp
+      
+    end
 end
 
     

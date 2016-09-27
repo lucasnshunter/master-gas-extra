@@ -97,14 +97,13 @@ class RepresentanteController < ApplicationController
      #dados de endereço e localização 7
      @representante.representante_addr=params[:addr]
      @representante.representante_ad_city=params[:adcit]
-     @representante.representante_ad_uf=params[:estado]
+     @representante.representante_ad_uf=params[:uf]
      @representante.representante_ad_cep=params[:adcep]
      @representante.representante_area=params[:area]
      @representante.representante_bairro=params[:bairro]
      @representante.representante_logr=params[:logr]
-     @id= @representante.representante_id  
-     @tela=@representante.solicitar_dados_representante @id
-     
+     @id=params[:id]  
+     @tela=@representante.solicitar_dados_representante @id if @representante.atualizar_representante @representante
   end
   
   def excluir
