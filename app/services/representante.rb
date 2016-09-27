@@ -10,13 +10,6 @@ class Representante
     attr_accessor :representante_phone
     attr_accessor :representante_email
     #endereço
-    attr_accessor :representante_addr
-<<<<<<< HEAD
-    attr_accessor :representante_area
-    attr_accessor :representante_bairro
-    attr_accessor :representante_logr
-=======
->>>>>>> pesquisa_relatorios
     attr_accessor :representante_ad_city
     attr_accessor :representante_ad_uf
     attr_accessor :representante_ad_cep
